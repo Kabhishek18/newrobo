@@ -1,0 +1,260 @@
+@media (min-width: 992px) and (max-width: 1150px) {
+ 
+}
+@media (min-width: 768px) and (max-width: 991px) {
+   
+}
+@media (min-width: 596px) and (max-width: 767px) {
+   
+}
+@media (min-width: 481px) and (max-width: 595px) {
+   
+}
+
+@media (max-width: 480px) {
+.strip2, .strip4 , .slide__content {
+    display: none;
+}
+
+.top-strip-inner {
+    padding: 7px 0px;
+    font-size: 13px;
+}
+
+.banner__slider .slide .slide__content--headings .title{
+    font-size: 16px !important;
+}
+
+.banner__slider .title_3{
+    font-size: 13px !important;
+}
+
+.enroll_box {
+    display: block;
+    text-align: center;
+}
+
+.enroll_text h3 {
+    font-size: 30px;
+    margin-bottom: 37px;
+}
+
+.title h2 {
+    font-size: 26px;
+}
+
+.title h6 {
+    width: 100%;
+    font-size: 14px;
+   
+}
+
+.welcome_layout_img {
+    width:130px;
+    height: 130px;
+}
+
+.welcome_layout_box h5 {
+    font-size: 24px;
+}
+
+.tab_box .nav-tabs .nav-item {
+    margin-bottom: -1px;
+    margin-right: 0px;
+}
+
+#overview_box h4 {
+    font-size: 26px !important;
+ 
+}
+
+.overview_holder {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.overview_column_left_img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-color: #F4BD00;
+    margin-right: 40px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.testimonial p {
+    font-size: 24px;
+    line-height: 1.2em;
+    color: #ffffff;
+    font-family: lato;
+    font-weight: 300;
+}
+
+.component-pricing-plan-price {
+    width: 100%;
+    position: static; 
+    margin-bottom: 15px;
+}
+
+.price_plan_box_inner_white {
+    width: 100%;
+    padding: 30px;
+    background-color: #ffffff;
+}
+
+.accordion button .icon {
+    right: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.accordion button .icon::before {
+    top: 12px;
+    left: 6px;
+    width: 15px;
+    height: 2px;
+}
+
+.accordion button .icon::after {
+    top: 6px;
+    left: 12.5px;
+}
+
+.footer_logo {
+    max-height: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+    z-index: 99999999;
+    margin-bottom: 25px;
+}
+
+.footer_logo img {
+    width: 55%;
+}
+
+.col_inner{
+    margin-bottom: 20PX;
+}
+
+.copyright {
+    display: block;
+    justify-content: space-between;
+    color: rgb(86 80 159) !important;
+    text-align: center;
+    font-size: 12PX;
+}
+
+#footer_bottom li >a {
+    width: 30px;
+    height: 30px;
+    display: block;
+    text-align: center;
+    background-size: 34px 29px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #f4bd00;
+    padding-top: 5px;
+}
+  
+.social_box i {
+    font-size: 14px;
+}
+
+.ul_box {
+    display: block;
+}
+
+.overview_box ul li {
+    display: flex;
+}
+
+.overview_box ul {
+     margin-left: 0px; 
+}
+
+.course_detail_banner_right{
+    margin-top: 20px;
+}
+
+.h1, h1 {
+    font-size: 34px;
+}
+
+.light_box_grid_4 {
+    max-width: 100% !important;
+}
+
+.blog_post {
+    padding: 0px;
+}
+
+.comment_holder {
+    display: block;
+}
+
+.client_img {
+    margin-bottom: 20px;
+}
+
+.blog_post_feature {
+    justify-content: start;
+}
+
+.feature_post_img {
+    margin-right: 20px;
+}
+
+.navbar-nav {
+    margin-left: 0px;
+}
+.icon_size{
+    display: none;
+}
+header .nav-item .li_item_a {
+    display: block;
+    min-width: 125px;
+    text-align: left;
+    padding: 8px 15px;
+    color: rgb(86 80 159) !important;
+}
+.form-wrap {
+    display: block;
+    width: 90%;
+    margin:auto;
+    border:1px solid red;
+}
+.form-wrap .login_form_right{
+    width: 100%;
+}
+.form-wrap .login_form_left{
+    width: 100%;
+}
+.login_form_left p {
+  
+    margin-top: 10px;
+}
+.social_login_box span{
+    display: none;
+}
+.social_login_box ul{
+        display: flex;
+    justify-content: space-evenly;
+}
+.form-wrap .social_login_box ul li {
+    margin-top: 20px;
+    width: 45px;
+}
+.form-wrap .social_login_box ul li a i{
+    margin: 0px;
+}
+.main_form_box .checkbox input {
+    margin-right: 0px;
+}
+
+}
+ 
+ 
