@@ -7,6 +7,7 @@ class Page extends CI_Controller {
         //Library
 		$this->load->library('cart');
 		$this->load->library('session');
+		$this->load->model('cart_model');
         //Model
 		if ($this->config->item('secure_site')) {
 			force_ssl();
@@ -33,4 +34,26 @@ class Page extends CI_Controller {
 		$this->load->view('contact');
 		$this->load->view('inc/footer');
 	}
+
+	public function Courses_Cat()
+	{
+		$catid = $this->uri->segment(2,0);
+		if(!empty($catid)){
+			$cat = $this->cart_model->Getcat($catid);
+			$this->load->view('inc/header');
+			$this->load->view('catcourse',$cat);
+			$this->load->view('inc/footer');
+		}
+		else{
+			redirect('404');
+		}
+	}
+
+	public function Courses()
+	{
+		$this->load->view('inc/header');
+		$this->load->view('course');
+		$this->load->view('inc/footer');
+	}
+
 }

@@ -56,3 +56,8 @@ $route['translate_uri_dashes'] = FALSE;
 //Page 
 $route['aboutus'] = 'page/About';
 $route['contactus'] = 'page/Contact';
+
+
+//Course
+$route['courses/(:num)/(:any)'] = 'page/Courses_Cat';
+$route['course/(:any)'] = 'page/Courses';

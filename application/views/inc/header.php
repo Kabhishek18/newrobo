@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/responsive.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet"> 
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/slick/slick-theme.css">
 	<link rel="stylesheet" href="<?=base_url()?>assets/dist/simple-lightbox.css" />
@@ -89,21 +91,12 @@
 		                            <a class="dropdown-toggle nav-link li_item_a" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  <span class="icon_position icon_size icon_class"></span>Courses</a>
 
 		                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<?php $lists = $this->cart_model->Getcat();
+											foreach($lists as $list){?>	
 			                            <li class="dropdown nav-item li_item ">
-			                                <a class="dropdown-item" href="Little_Champs.html"><b>Lil Champs</b><br><small>Age (6 to 8 years)</small></a>
+			                                <a class="dropdown-item" href="<?=base_url()?>courses/<?=$list['id']?>/<?=$list['cat_name']?>"><b><?=$list['cat_name']?></b><br><small><?=$list['cat_slug']?></small></a>
 			                            </li>
-
-			                            <li class="dropdown nav-item li_item ">
-			                                <a class="dropdown-item" href="Junior-scientists.html"><b>Junior Scientist</b><br><small>Age (9 to 12 years)</small></a>
-			                            </li>
-
-			                            <li class="dropdown nav-item li_item ">
-			                            	<a class="dropdown-item" href="Young-engineers.html"><b>Young Engineers</b><br><small>Age (13 to 16 years)</small></a>
-			                            </li>
-
-			                             <li class="dropdown Engineers nav-item li_item ">
-			                                <a class="dropdown-item" href="Robo-wzards.html"><b>Engineers</b><br><small>Age (17 +years)</small></a>
-			                            </li>
+									<?php }?>			
 		                            </ul>
 		                        </li>
 
