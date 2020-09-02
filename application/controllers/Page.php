@@ -39,7 +39,8 @@ class Page extends CI_Controller {
 	{
 		$catid = $this->uri->segment(2,0);
 		if(!empty($catid)){
-			$cat = $this->cart_model->Getcat($catid);
+			$cat['cat'] = $this->cart_model->Getcat($catid);
+			$cat['catpro'] = $this->cart_model->Getcatpro($catid);
 			$this->load->view('inc/header');
 			$this->load->view('catcourse',$cat);
 			$this->load->view('inc/footer');
@@ -51,9 +52,15 @@ class Page extends CI_Controller {
 
 	public function Courses()
 	{
+		$catid = $this->uri->segment(2,0);
+		if(!empty($catid)){
 		$this->load->view('inc/header');
 		$this->load->view('course');
 		$this->load->view('inc/footer');
+		}
+		else{
+			redirect('404');
+		}
 	}
 
 }

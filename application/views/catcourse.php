@@ -2,8 +2,8 @@
 <section class="breadcrumb_box plan_breadcrumb">
 			<div class="container">
 				<div class="breadcrumb_text">
-					<h1>Lil Champs</h1>
-					<h6>Exclusively designed for the little champions</h6>							
+					<h1><?=$cat['cat_name']?></h1>
+					<h6>Exclusively designed for <?=$cat['cat_slug']?></h6>							
 				</div>
 			</div>
 		</section>
@@ -14,7 +14,7 @@
 			<div class="container">
 				<div class="title">
 					<h2>Our Session Plan</h2>
-					<h6>WWe offer a quality children care and friendly atmosphere</h6>
+					<h6>We offer a quality children care and friendly atmosphere</h6>
 					<div></div>
 					
 				</div>
@@ -22,6 +22,7 @@
 			<div class="price_plan_box margin_top_100">
 				<div class="container">
 					<div class="row">
+						<?php foreach($catpro as $item){?>
 						<div class="col-md-6">
 							<div class="price_plan_box_inner">
 								<div class="price_plan_box_inner_white">
@@ -29,65 +30,28 @@
 										<span>Visual Class</span>
 									</div>
 									<h5 class="component-pricing-plan-header">
-									Animation and Game Designing
+									<?=$item['product_name']?>
 									</h5>
 									<div class="component-pricing-plan-description">
-										Create an animation in just few clicks!
+										<?=$item['product_slug']?>
 									</div>
 
 									<div class="component-pricing-plan-feature">
 										<div class="component-list">
-											<ul>
-												<li>60 minute sessions</li>
-												<li>Enhance your creative skills</li>
-												<li>Increase your logical skills</li>
-												<li>No prior coding experience required</li>	
-											</ul>
+											<?=$item['product_highlight']?>
 										</div> 
  
 
 									</div>
 
 									<div class="component-pricing-plan-button">
-										<a href="Little_Champs_Animation_Game_Design_Course.html" class="component-button">Explore More<i></i></a>
+										<a href="<?=base_url()?>course/<?=$item['id']?>" class="component-button">Explore More<i></i></a>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<div class="col-md-6">
-							<div class="price_plan_box_inner">
-								<div class="price_plan_box_inner_white">
-									<div class="component-pricing-plan-price">
-											<span>Visual Class</span>
-									</div>
-									<h5 class="component-pricing-plan-header">
-									Python Junior
-									</h5>
-									<div class="component-pricing-plan-description">
-										Make visualization real with drag and drop programming
-									</div>
-
-									<div class="component-pricing-plan-feature">
-										<div class="component-list">
-											<ul>
-												<li>60 minute sessions</li>
-												<li>Design puzzles</li>
-												<li>Curate interactive stories</li>
-												<li>Activity worksheet to be provided</li>	
-											</ul>
-										</div>
- 
-
-									</div>
-
-									<div class="component-pricing-plan-button">
-										<a href="Little_Champs_Python_Junior_Course.html" class="component-button">Explore More<i></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-
+						<?php }?>
+						
 				 
 					</div>
 				</div>
