@@ -26,12 +26,8 @@
 										</div>
 
 									<div class="cta_btn">
-										<form method="post" action="<?=base_url()?>page/Checkout">
-											<input type="hidden" name="id" value="<?=$id?>">
-											<input class=" btn button-custom animated text-white" type="submit" value="Enroll Now">
-										</form>
 										
-										<button class=" btn button-custom animated text-white" data-toggle="modal" data-target="#exampleModalCenter"> Enroll Now</button>
+										<button class=" btn button-custom animated text-white" data-toggle="modal" data-target="#selectprice"> Enroll Now</button>
 									</div>
 								</div>
 							</div>
@@ -103,11 +99,58 @@
 		<!---------------------------external_section_End------------------------------------------------------------>
     
         <!------------------------------------------BOOK_NOW_FORM_START------------------------------------------------>
+			<div class="modal fade" id="selectprice" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered"  >
+				<div class="modal-content">
+				  <div class="modal-header">
+				  <div class="logo_book"><img src="<?=base_url()?>assets/img/logo.jpg"></div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+				  </div>
+				  <div class="modal-body">
+				  <h3>Select Your Curriculum Type </h3>
+				  <hr>
+					<form method="post" action="<?=base_url()?>page/Checkout">
+						<input type="hidden" name="id" value="<?=$id?>">
+					
+					<div class="form-group">
+						<label>
+							<input type="radio"  name="selection" value="1"  required="">
+							Novice <span> (₹ <?=$novice_price?>) </span>
+						</label>
+				    </div>
+					
+					<div class="form-group">
+						<label>
+							<input type="radio" name="selection" value="2">
+							Developer<span> (₹ <?=$developer_price?>) </span>
+						</label>
+				    </div>
+
+					<div class="form-group">
+						<label>
+							<input type="radio"  name="selection" value="3">
+							Champion<span> (₹ <?=$champion_price?>) </span>
+						</label>
+				    </div>  
+					
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Send message</button>
+					  </div>	
+					</form>
+				  </div>
+				
+				</div>
+			  </div>
+			</div>
+
 			<div class="modal fade" id="book_now" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog modal-dialog-centered"  >
 				<div class="modal-content">
 				  <div class="modal-header">
-				  <div class="logo_book"><img src="img/logo.jpg"></div>
+				  <div class="logo_book"><img src="<?=base_url()?>assets/img/logo.jpg"></div>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					  <span aria-hidden="true">&times;</span>
 					</button>

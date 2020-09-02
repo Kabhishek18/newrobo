@@ -68,17 +68,25 @@ class Page extends CI_Controller {
 	public function Checkout()
 	{
 		$proid =$this->input->post('id');
+		$selection =$this->input->post('selection');
 		if(!empty($proid)){
-		$pro = $this->cart_model->Getproall($proid);	
-		$this->load->view('inc/header');
-		$this->load->view('checkout',$pro);
-		$this->load->view('inc/footer');
+			$pro = $this->cart_model->Getproall($proid);
+			$checkout['selection'] = $selection;
+			$checkout['pro'] = $pro;
+			$this->session->set_userdata('checkout',$checkout);
+			$this->load->view('inc/header');
+			$this->load->view('checkout',$pro);
+			$this->load->view('inc/footer');	
 		}
 		else{
 			redirect('404');
 		}
+	}
 
+	public function Order()
+	{
 
+		
 	}
 
 }
