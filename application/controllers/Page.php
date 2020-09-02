@@ -52,11 +52,31 @@ class Page extends CI_Controller {
 
 	public function Courses()
 	{
-		$catid = $this->uri->segment(2,0);
-		if(!empty($catid)){
+		$proid = $this->uri->segment(2,0);
+		if(!empty($proid)){
+		$pro = $this->cart_model->Getproall($proid);	
 		$this->load->view('inc/header');
-		$this->load->view('course');
+		$this->load->view('course',$pro);
 		$this->load->view('inc/footer');
+		}
+		else{
+			redirect('404');
+		}
+	}
+
+
+	public function CourseModalFill()
+	{
+		$selection =$this->input->post['selection'];
+		if($selection == 1){
+
+		}
+		else if($selection == 2)
+		{
+
+		}
+		else if($selection == 3) {
+			
 		}
 		else{
 			redirect('404');

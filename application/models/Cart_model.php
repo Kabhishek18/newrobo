@@ -7,7 +7,6 @@ class Cart_model extends CI_Model{
         $this->page   = 'page';
         $this->product   = 'product';
         $this->cat   = 'cat';
-        $this->subcat   = 'subcat';
         $this->coupon = 'coupon';
         $this->order = 'userorder';
         $this->review = 'review';
@@ -40,12 +39,12 @@ class Cart_model extends CI_Model{
         $this->db->from($this->product);
        
         if($id){
-            $array = array('id' => $id, 'product_delete' => '0','product_status' => '0');
+            $array = array('id' => $id,'product_status' => '0');
             $this->db->where($array);
             $query  = $this->db->get();
             $result = $query->row_array();
         }else{
-           $array = array('product_delete' => '0','product_status' => '0');
+           $array = array('product_status' => '0');
             $this->db->where($array);
             $query  = $this->db->get();
             $result = $query->result_array();
