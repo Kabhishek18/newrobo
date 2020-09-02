@@ -26,9 +26,9 @@
 										</div>
 
 									<div class="cta_btn">
-										<form method="post" action="<?=base_url()?>">
+										<form method="post" action="<?=base_url()?>page/Checkout">
 											<input type="hidden" name="id" value="<?=$id?>">
-											<input name="" class=" btn button-custom animated text-white" type="submit" value="Enroll Now">
+											<input class=" btn button-custom animated text-white" type="submit" value="Enroll Now">
 										</form>
 										
 										<button class=" btn button-custom animated text-white" data-toggle="modal" data-target="#exampleModalCenter"> Enroll Now</button>

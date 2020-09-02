@@ -65,22 +65,20 @@ class Page extends CI_Controller {
 	}
 
 
-	public function CourseModalFill()
+	public function Checkout()
 	{
-		$selection =$this->input->post['selection'];
-		if($selection == 1){
-
-		}
-		else if($selection == 2)
-		{
-
-		}
-		else if($selection == 3) {
-			
+		$proid =$this->input->post('id');
+		if(!empty($proid)){
+		$pro = $this->cart_model->Getproall($proid);	
+		$this->load->view('inc/header');
+		$this->load->view('checkout',$pro);
+		$this->load->view('inc/footer');
 		}
 		else{
 			redirect('404');
 		}
+
+
 	}
 
 }
