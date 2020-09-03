@@ -85,8 +85,15 @@ class Page extends CI_Controller {
 
 	public function Order()
 	{
+		$order['name'] =$this->input->post('name');
+		$order['email'] =$this->input->post('email');
+		$order['address'] =$this->input->post('address');
+		$order['address2'] =$this->input->post('address2');
+		$order['country'] =$this->input->post('country');
+		$order['state'] =$this->input->post('state');
+		$order['zip'] =$this->input->post('zip');
 
-		
+
 	}
 
 }

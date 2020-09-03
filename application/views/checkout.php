@@ -3,7 +3,6 @@
     
     <h3 class="Learner">Checkout form</h3>
   </div>
-
   <div class="row">
     <div class="col-md-4 order-md-2 mb-4">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -12,15 +11,30 @@
       <ul class="list-group mb-3">
         <li class="list-group-item d-flex justify-content-between lh-condensed">
           <div>
-            <h6 class="my-0">Product name</h6>
-            <small class="text-muted">Brief description</small>
+            <h6 class="my-0"><?=$product_name?></h6>
+            <small class="text-muted"><?=$product_slug?></small>
           </div>
-          <span class="text-muted">$12</span>
+          <?php  
+          if($_SESSION['checkout']['selection'] == 1){?>
+            <span class="text-muted">₹ <?=$_SESSION['checkout']['pro']['novice_price']?></span>
+          <?php }else if($_SESSION['checkout']['selection'] ==2){?>
+            <span class="text-muted">₹ <?=$_SESSION['checkout']['pro']['developer_price']?></span>  
+          <?php }else if($_SESSION['checkout']['selection'] ==3){?>  
+            <span class="text-muted">₹ <?=$_SESSION['checkout']['pro']['champion_price']?></span>
+          <?php }?>  
         </li>
 
         <li class="list-group-item d-flex justify-content-between">
           <span>Total (USD)</span>
-          <strong>$20</strong>
+          <strong> <?php  
+          if($_SESSION['checkout']['selection'] == 1){?>
+            ₹ <?=$_SESSION['checkout']['pro']['novice_price']?>
+          <?php }else if($_SESSION['checkout']['selection'] ==2){?>
+            ₹ <?=$_SESSION['checkout']['pro']['developer_price']?>  
+          <?php }else if($_SESSION['checkout']['selection'] ==3){?>  
+            ₹ <?=$_SESSION['checkout']['pro']['champion_price']?>
+          <?php }?>  
+        </strong>
         </li>
       </ul>
 
