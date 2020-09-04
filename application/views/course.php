@@ -111,7 +111,7 @@
 				  <div class="modal-body">
 				  <h3>Select Your Curriculum Type </h3>
 				  <hr>
-					<form method="post" action="<?=base_url()?>page/Checkout">
+					<form method="post" action="<?=base_url()?>checkout">
 						<input type="hidden" name="id" value="<?=$id?>">
 					
 					<div class="form-group">

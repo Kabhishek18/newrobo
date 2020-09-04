@@ -130,21 +130,11 @@ class Cart_model extends CI_Model{
         return $insert?$insert:false;}
 
 
-    public function insertorder($data){
+    public function InsertOrder($data){
         $insert = $this->db->insert($this->order,$data);
          $insert_id = $this->db->insert_id();
         return $insert?$insert_id:false;
     }
-
-    public function Search($id){
-     
-        $this->db->like('product_name', $id);   
-        $query  = $this->db->get('product');
-        $result = $query->result_array();
-        // return fetched data
-        return !empty($result)?$result:false;
-    }
-
 
 
     public function Getorder($id = ''){

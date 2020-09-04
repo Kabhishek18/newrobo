@@ -61,3 +61,6 @@ $route['contactus'] = 'page/Contact';
 //Course
 $route['courses/(:num)/(:any)'] = 'page/Courses_Cat';
 $route['course/(:any)'] = 'page/Courses';
+
+//order
+$route['checkout'] ='page/checkout';

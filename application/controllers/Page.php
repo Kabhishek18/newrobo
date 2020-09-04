@@ -69,7 +69,11 @@ class Page extends CI_Controller {
 	{
 		$proid =$this->input->post('id');
 		$selection =$this->input->post('selection');
-		if(!empty($proid)){
+		if(empty($proid)){
+			$proid=$_SESSION['checkout']['pro']['id'];
+			$selection = $_SESSION['checkout']['selection'];
+		}
+		if(!is_null($proid)){
 			$pro = $this->cart_model->Getproall($proid);
 			$checkout['selection'] = $selection;
 			$checkout['pro'] = $pro;
@@ -85,6 +89,10 @@ class Page extends CI_Controller {
 
 	public function Order()
 	{
+		//Order User ID
+		$data['order_userid'] =1;
+
+		if($data['order_userid']){
 		$order['name'] =$this->input->post('name');
 		$order['email'] =$this->input->post('email');
 		$order['address'] =$this->input->post('address');
@@ -92,8 +100,34 @@ class Page extends CI_Controller {
 		$order['country'] =$this->input->post('country');
 		$order['state'] =$this->input->post('state');
 		$order['zip'] =$this->input->post('zip');
+		
+		$data['order_detail'] =json_encode($order);
+			if($_SESSION['checkout']['selection'] == 1){
+	          $data['order_amount'] = $_SESSION['checkout']['pro']['novice_price'];
+	           }else if($_SESSION['checkout']['selection'] ==2){
+	         $data['order_amount'] =  $_SESSION['checkout']['pro']['developer_price']  ;
+	          }else if($_SESSION['checkout']['selection'] ==3){  
+	         $data['order_amount'] =  $_SESSION['checkout']['pro']['champion_price'];
+	          }
+	    //Order Created/Status      
+        $data['order_created'] = date('d/m/Y');  
+        $data['order_status'] = 0;
+        $insert=$this->cart_model->InsertOrder($data);
+
+	        //Insert
+	        if ($insert) {
+	        	echo "Your Purchase Order Has Been Confirmed with Order Id ".$insert;
+	        }else{
+	        	$this->session->set_flashdata('warning', 'Something Misfortune Happen !');
+				redirect('checkout');
+	        }
 
 
+    	}	
+    	else{
+			$this->session->set_flashdata('warning', 'Please Login or Signup !');
+			redirect('checkout');
+    	}
 	}
 
 }

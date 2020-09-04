@@ -51,6 +51,24 @@
       <h4 class="mb-3">Billing address</h4>
       <form class="needs-validation" method="post" action="<?=base_url()?>page/Order">
         <div class="row">
+             <?php if($this->session->flashdata('success')){ ?>
+                    <div class="col-md-12 mb-3">
+                    <div class="alert alert-success" role="alert">
+                                             <p class="mb-0">
+                                                <?php echo $this->session->flashdata('success'); ?>
+                                            </p>
+                                        </div>
+                    </div>                   
+                         <?php }elseif($this->session->flashdata('warning')){ ?>  
+                         <div class="col-md-12 mb-3">
+                       <div class="alert alert-danger" role="alert">
+                                          
+                                            <p class="mb-0">
+                                               <?php echo $this->session->flashdata('warning'); ?>
+                                            </p>
+                                        </div>
+                           </div>             
+                        <?php }?> 
           <div class="col-md-12 mb-3">
             <label for="firstName">Full Name</label>
             <input type="text" class="form-control" id="firstName" name="name"  placeholder="Full Name" required>
