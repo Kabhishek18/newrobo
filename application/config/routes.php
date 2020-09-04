@@ -64,3 +64,6 @@ $route['course/(:any)'] = 'page/Courses';
 
 //order
 $route['checkout'] ='page/checkout';
+
+//Student dashboard
+$route['dashboard'] ='student/index';

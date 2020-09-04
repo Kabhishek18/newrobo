@@ -148,9 +148,9 @@
 			       		<div class="login_form_right">
 			       			<!-- Begin # DIV Form -->
 			                <div id="div-forms">
-			                
+			                 <?php echo $this->session->flashdata('warning'); ?>
 			                    <!-- Begin # Login Form -->
-			                    <form id="login-form" class="main_form_box">
+			                    <form id="login-form" class="main_form_box" action="<?=base_url()?>student/Authenticate">
 			                    	<div class="header_form_t">
 					       				<h3>Login to your account</h3>
 					       				<p>Don't have an account? <button id="login_register_btn" type="button" class="custom_btn">Sign Up Free!</button></p>
@@ -158,11 +158,11 @@
 					               
 							    		 	
 							    		<div class="form-group">
-							    			<input id="login_username" class="form-control" type="text" placeholder="Username" required>
+							    			<input id="login_username" name="users_email" class="form-control" type="text" placeholder="Username" required>
 							    		</div>
 
 							    		<div class="form-group">
-							    		<input id="login_password" class="form-control" type="password" placeholder="Password" required>
+							    		<input id="login_password" class="form-control" name="users_password" type="password" placeholder="Password" required>
 							    		</div>
 			                            <div class="checkbox form-inline">
 			                                <label>
