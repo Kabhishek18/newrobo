@@ -103,8 +103,9 @@ class Page extends CI_Controller {
 		$order['state'] =$this->input->post('state');
 		$order['zip'] =$this->input->post('zip');
 		
-		$data['order_product'] = json_encode($_SESSION['checkout'],JSON_PRETTY_PRINT); 
-		$data['order_detail'] =json_encode($order,JSON_PRETTY_PRINT);
+		$data['order_cart'] = json_encode($_SESSION['checkout']['pro']['id']); 
+
+		$data['order_detail'] =json_encode($order);
 			if($_SESSION['checkout']['selection'] == 1){
 	          $data['order_amount'] = $_SESSION['checkout']['pro']['novice_price'];
 	           }else if($_SESSION['checkout']['selection'] ==2){
@@ -144,7 +145,7 @@ class Page extends CI_Controller {
             ];
      $insert = $this->db->insert('payments', $data);
      $arr = array('msg' => 'Payment successfully credited', 'status' => true); 
-      
+     echo json_encode($arr); 
     
     }
     public function RazorThankYou()
@@ -154,13 +155,27 @@ class Page extends CI_Controller {
 
 	    //    Insert
 	        if ($insert) {
+	        	echo "<h1>";
+	        	 $this->load->view('inc/header');
+	        	echo "</h1>";
 	        	echo "Your Purchase Order Has Been Confirmed with Order Id ".$insert;
+	        	 $this->load->view('razorthankyou');
+	        	 $this->session->unset_userdata('checkout');	
+				$this->session->unset_userdata('orderdata');
+	        	 $this->load->view('inc/footer');
+
 	        }else{
 	        	$this->session->set_flashdata('warning', 'Something Misfortune Happen !');
 				redirect('checkout');
 	        } 
-     $this->load->view('razorthankyou');
+    
+   		
     }
+    public function RazorFailure()
+    {
+    	echo "Payment Failure <a href='".base_url()."'> Click to Home</a>";
+    }
+
 
     public function PageNotFound()
     {

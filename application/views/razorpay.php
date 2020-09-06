@@ -1,60 +1,39 @@
 <?php 
   $detail =  json_decode($order_detail,TRUE);
-  $product =  json_decode($order_product,TRUE);
+  $product =  $_SESSION['checkout'];
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Razorpay Payment With Codeigniter</title>
+
 </head><script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
-<body>
 <div class="container">
 <br><br><br>
 <div class="row">
+  <div class="col-md-12 ">
+    <div class="alert alert-warning">
+     <p>1. <strong>Warning!</strong> Please Don't end Session or Browser.</p>
+     <p>2. <strong>Note!</strong> Please Follow up the instruction as given Below.</p>
+    </div>
+  </div>
 <div class="col-md-4">
 <figure class="card card-product">
-    <?=var_dump($detail)?>
   <div class="bottom-wrap">
-    <a href="javascript:void(0)" class="btn btn-sm btn-primary float-right buy_now" data-amount="1000" data-id="1">Order Now</a> 
+    <a href="javascript:void(0)" class="btn btn-sm btn-primary float-right buy_now" data-amount="1000" data-id="1">Proceed To Payment</a> 
   </div> <!-- bottom-wrap.// -->
 </figure>
 </div> <!-- col // -->
 <div class="col-md-4">
 <figure class="card card-product">
-  <div class="img-wrap"><img src="//www.tutsmake.com/wp-content/uploads/2019/03/vvjghg.png"> </div>
-  <figcaption class="info-wrap">
-      <h4 class="title">Sony Watch</h4>
-      <p class="desc">Some small description goes here</p>
-      <div class="rating-wrap">
-        <div class="label-rating">132 reviews</div>
-        <div class="label-rating">154 orders </div>
-      </div> <!-- rating-wrap.// -->
-  </figcaption>
+
   <div class="bottom-wrap">
-      <a href="javascript:void(0)" class="btn btn-sm btn-primary float-right buy_now" data-amount="1280" data-id="2">Order Now</a> 
-      <div class="price-wrap h5">
-        <span class="price-new">₹1280</span> <del class="price-old">₹1400</del>
-      </div> <!-- price-wrap.// -->
+      <a href="<?=base_url()?>checkout" onclick="window.history.back();"class="btn btn-sm btn-success float-right ">Back To Checkout</a> 
+     
   </div> <!-- bottom-wrap.// -->
 </figure>
 </div> <!-- col // -->
 <div class="col-md-4">
 <figure class="card card-product">
-  <div class="img-wrap"><img src="//www.tutsmake.com/wp-content/uploads/2019/03/jhgjhgjg.jpg"></div>
-  <figcaption class="info-wrap">
-      <h4 class="title">Mobile</h4>
-      <p class="desc">Some small description goes here</p>
-      <div class="rating-wrap">
-        <div class="label-rating">132 reviews</div>
-        <div class="label-rating">154 orders </div>
-      </div> <!-- rating-wrap.// -->
-  </figcaption>
   <div class="bottom-wrap">
-      <a href="javascript:void(0)" class="btn btn-sm btn-primary float-right buy_now" data-amount="1280" data-id="3">Order Now</a> 
-      <div class="price-wrap h5">
-        <span class="price-new">₹1500</span> <del class="price-old">₹1980</del>
-      </div> <!-- price-wrap.// -->
+      <a href="<?=base_url()?>" class=" btn btn-info float-right ">Home</a>
   </div> <!-- bottom-wrap.// -->
 </figure>
 </div> <!-- col // -->
@@ -62,25 +41,23 @@
 </div> 
 <!--container.//-->
  
- 
-</body>
-</html>
-
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
-  var SITEURL = "<?php echo base_url() ?>";
+  var SITEURL = "<?=base_url()?>";
   $('body').on('click', '.buy_now', function(e){
     var totalAmount = "<?=$order_amount?>";
-    var product_id =  $(this).attr("data-id");
+    var product_id =   "<?=$product['pro']['id']?>";
+    var product_desc =   "<?=$product['pro']['product_name']?>";
+    var img_url = SITEURL.concat('assets/img/logo.jpg');
     var options = {
-    "key": "rzp_live_ILgsfZCZoFIKMb",
+    "key": "rzp_test_OD5kkX7KJcn8Yd",
     "amount": (totalAmount*100), 
-    "name": "Tutsmake",
-    "description": "Payment",
-    "image": "//www.tutsmake.com/wp-content/uploads/2018/12/cropped-favicon-1024-1-180x180.png",
+    "name": "New Robos",
+    "description": product_desc,
+    "image": img_url,
     "handler": function (response){
           $.ajax({
-            url: SITEURL + 'payment/razorPaySuccess',
+            url: SITEURL + 'page/razorPaySuccess',
             type: 'post',
             dataType: 'json',
             data: {
@@ -88,14 +65,15 @@
             }, 
             success: function (msg) {
  
-               window.location.href = SITEURL + 'payment/RazorThankYou';
+               window.location.href = SITEURL + 'page/RazorThankYou';
             }
+
         });
       
     },
  
     "theme": {
-        "color": "#528FF0"
+        "color": "#56509f"
     }
   };
   var rzp1 = new Razorpay(options);

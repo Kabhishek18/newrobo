@@ -64,8 +64,6 @@ $route['course/(:any)'] = 'page/Courses';
 
 //order
 $route['checkout'] ='page/checkout';
-$route['pay'] = 'razorpay/index';
-$route['checkout/(:any)'] = "razorpay/checkout/$1";
 
 //Student dashboard
 $route['dashboard'] ='student/index';
