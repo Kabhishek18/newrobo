@@ -67,3 +67,34 @@ $route['checkout'] ='page/checkout';
 
 //Student dashboard
 $route['dashboard'] ='student/index';
+
+
+
+//     _    ____  __  __ ___ _   _   ____   _    _   _ _____ _     
+//    / \  |  _ \|  \/  |_ _| \ | | |  _ \ / \  | \ | | ____| |    
+//   / _ \ | | | | |\/| || ||  \| | | |_) / _ \ |  \| |  _| | |    
+//  / ___ \| |_| | |  | || || |\  | |  __/ ___ \| |\  | |___| |___ 
+// /_/   \_\____/|_|  |_|___|_| \_| |_| /_/   \_\_| \_|_____|_____|
+                                                                
+
+
+
+
+$route['ci-admin'] = 'home/index';
+
+//Dashboard
+$route['ci-admin/dashboard'] ='home/Dashboard';
+$route['ci-admin/student'] ='home/StudentList';
+
+//Category
+$route['ci-admin/category'] ='home/CategoryList';
+$route['ci-admin/category/edit/(:num)'] ='home/CategoryAdd';
+$route['ci-admin/category/add'] ='home/CategoryAdd';
+
+//Course
+$route['ci-admin/course'] ='home/CourseList';
+$route['ci-admin/course/edit/(:num)'] ='home/CourseAdd';
+$route['ci-admin/course/add'] ='home/CourseAdd';
+
+//Order
+$route['ci-admin/order'] ='home/OrderList';

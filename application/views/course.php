@@ -48,7 +48,7 @@
 
 							</div>
 							<div class="c_d_b_r_img_box">
-								<img src="<?=base_url()?>assets/img/dummy.jpg" alt="">
+								<img src="<?=base_url()?>uploads/<?=$product_image?>" alt="">
 							</div>
 
 						</div>
@@ -137,7 +137,7 @@
 					
 					  <div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="submit" class="btn btn-primary">Send message</button>
+						<button type="submit" class="btn btn-primary">Proceed To Checkout</button>
 					  </div>	
 					</form>
 				  </div>
