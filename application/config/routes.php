@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'page';
-$route['404_override'] = '';
+$route['404_override'] = 'page/PageNotFound';
 $route['translate_uri_dashes'] = FALSE;
 
 //Page 
@@ -64,6 +64,8 @@ $route['course/(:any)'] = 'page/Courses';
 
 //order
 $route['checkout'] ='page/checkout';
+$route['pay'] = 'razorpay/index';
+$route['checkout/(:any)'] = "razorpay/checkout/$1";
 
 //Student dashboard
 $route['dashboard'] ='student/index';

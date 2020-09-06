@@ -6,7 +6,9 @@ class Page extends CI_Controller {
         parent::__construct();
         //Library
 		$this->load->library('cart');
-		$this->load->library('session');
+       $this->load->library(array('form_validation','session'));
+        $this->load->helper(array('url','html','form'));
+    
 		$this->load->model('cart_model');
         //Model
 		if ($this->config->item('secure_site')) {
@@ -101,7 +103,8 @@ class Page extends CI_Controller {
 		$order['state'] =$this->input->post('state');
 		$order['zip'] =$this->input->post('zip');
 		
-		$data['order_detail'] =json_encode($order);
+		$data['order_product'] = json_encode($_SESSION['checkout'],JSON_PRETTY_PRINT); 
+		$data['order_detail'] =json_encode($order,JSON_PRETTY_PRINT);
 			if($_SESSION['checkout']['selection'] == 1){
 	          $data['order_amount'] = $_SESSION['checkout']['pro']['novice_price'];
 	           }else if($_SESSION['checkout']['selection'] ==2){
@@ -109,18 +112,15 @@ class Page extends CI_Controller {
 	          }else if($_SESSION['checkout']['selection'] ==3){  
 	         $data['order_amount'] =  $_SESSION['checkout']['pro']['champion_price'];
 	          }
-	    //Order Created/Status      
+	    //Order Created/Status    
+	    $data['order_id'] =uniqid('robo',true);  
         $data['order_created'] = date('d/m/Y');  
         $data['order_status'] = 0;
-        $insert=$this->cart_model->InsertOrder($data);
-
-	        //Insert
-	        if ($insert) {
-	        	echo "Your Purchase Order Has Been Confirmed with Order Id ".$insert;
-	        }else{
-	        	$this->session->set_flashdata('warning', 'Something Misfortune Happen !');
-				redirect('checkout');
-	        }
+        //
+		$this->session->set_userdata('orderdata',$data);
+        $this->load->view('inc/header');
+        $this->load->view('razorpay',$data);
+        $this->load->view('inc/footer');
 
 
     	}	
@@ -129,5 +129,41 @@ class Page extends CI_Controller {
 			redirect('checkout');
     	}
 	}
+	 public function RazorPay()
+    {
+        $this->load->view('razorpay');
+    }   
 
+	public function razorPaySuccess()
+    { 
+     $data = [
+               'user_id' => '1',
+               'payment_id' => $this->input->post('razorpay_payment_id'),
+               'amount' => $this->input->post('totalAmount'),
+               'product_id' => $this->input->post('product_id'),
+            ];
+     $insert = $this->db->insert('payments', $data);
+     $arr = array('msg' => 'Payment successfully credited', 'status' => true); 
+      
+    
+    }
+    public function RazorThankYou()
+    {
+	  $orderdata =$_SESSION['orderdata'];	
+      $insert=$this->cart_model->InsertOrder($orderdata);
+
+	    //    Insert
+	        if ($insert) {
+	        	echo "Your Purchase Order Has Been Confirmed with Order Id ".$insert;
+	        }else{
+	        	$this->session->set_flashdata('warning', 'Something Misfortune Happen !');
+				redirect('checkout');
+	        } 
+     $this->load->view('razorthankyou');
+    }
+
+    public function PageNotFound()
+    {
+    	$this->load->view('404');
+    }
 }
