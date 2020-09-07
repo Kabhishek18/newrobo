@@ -102,7 +102,7 @@
 
 		                        <li class="nav-item li_item ourteam"><a href="ourteam.html" class="nav-link li_item_a"><span class="icon_position icon_size icon_teacher"></span>Our Team</a></li>
 
-		                        <li class="nav-item li_item "><a href="blog.html" class="nav-link li_item_a"><span class="icon_position icon_size icon_blog"></span>Blog</a></li>
+		                        <li class="nav-item li_item "><a href="<?=base_url()?>blog" class="nav-link li_item_a"><span class="icon_position icon_size icon_blog"></span>Blog</a></li>
 
 		                        <li class="nav-item li_item "><a href="contactus" class="nav-link li_item_a"><span class="icon_position icon_size icon_contact"></span>Contact</a></li>
 

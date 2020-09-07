@@ -118,7 +118,20 @@ class Home extends CI_Controller {
 			redirect('ci-admin');
 		}
 	}
-
+	public function StudentDelete()
+	{
+		$url= $this->uri->segment(3,0); 
+		$insert =$this->home_model->DeleteStudent($url);
+		if($insert){
+			$this->session->set_flashdata('warning', 'Deleted Successfully');
+			redirect('ci-admin/student');
+		}
+		else{
+			$this->session->set_flashdata('warning', 'Something Misfortune Happened!');
+			redirect('ci-admin/student');
+		
+		}
+	}
 	//Category List
 	public function CategoryList()
 	{
@@ -404,4 +417,300 @@ class Home extends CI_Controller {
 	}
 
 	
+	//Blog Section
+
+	//Blog List
+	public function BlogList()
+	{
+		$data = $this->session->user_account;
+		if($data){	
+
+				if ($data['users_status']==0) {
+
+					$var['datalist'] = $this->home_model->ListBlog();
+					$this->load->view('admin/inc/header',$data);
+					$this->load->view('admin/bloglist',$var);
+					$this->load->view('admin/inc/foottile');
+					$this->load->view('admin/inc/footer');
+				}
+				else{
+					$this->load->view('admin/inc/header');
+					$this->session->set_flashdata('warning', 'Sorry, Your Account Has Been Inactive. Please Contact Your WebAdministrator');
+					$this->load->view('admin/status');
+					$this->load->view('admin/inc/footer');	
+				}
+			}
+
+		
+		else{
+			redirect('ci-admin');
+		}
+	}
+
+	//Blog Add View
+	public function BlogAdd()
+	{
+		$data = $this->session->user_account;
+		if($data){	
+
+				if ($data['users_status']==0) {
+					$this->load->view('admin/inc/header',$data);
+					$urlid = $this->uri->segment(4,0);
+
+					if($urlid){
+						//Update
+						$var['datalist'] = $this->home_model->ListBlog($urlid);
+						$this->load->view('admin/blogadd',$var);
+					}else{
+						//Add
+						$var['datalist'] = NULL;
+						$this->load->view('admin/blogadd',$var);
+					}
+
+					$this->load->view('admin/inc/foottile');
+					$this->load->view('admin/inc/footer');
+				}
+				else{
+					$this->load->view('admin/inc/header');
+					$this->session->set_flashdata('warning', 'Sorry, Your Account Has Been Inactive. Please Contact Your WebAdministrator');
+					$this->load->view('admin/status');
+					$this->load->view('admin/inc/footer');	
+				}
+			}
+
+		
+		else{
+			redirect('ci-admin');
+		}
+	}
+
+	//Blog Insert And Update
+	public function Bloginsert()
+	{
+		
+		$data = $this->session->user_account;
+		if($data){	
+
+				if ($data['users_status']==0) {
+					
+					$dir ='uploads/blog';
+					if (!is_dir($dir)) {
+						mkdir($dir, 0755, TRUE);
+					}
+					$config['upload_path'] =  $dir;
+			        $config['allowed_types'] = 'jpg|png|jpeg';
+			        $config['max_size'] = 3000;
+			        $this->load->library('upload', $config);
+					$this->upload->initialize($config);
+
+					if($this->upload->do_upload('blog_image')){
+			 		$image= $this->upload->data();
+					$reg['blog_image'] =$image['file_name'];}
+					else{
+						//Keep Empty For Image
+					}
+					$reg['id']=$this->input->post("id");
+					$reg['blog_title']=$this->input->post("blog_title");
+					$reg['blog_author']=$this->input->post("blog_author");
+					$reg['blurb_1']=$this->input->post("blurb_1");
+					$reg['blurb_2']=$this->input->post("blurb_2");
+					$reg['excerpt']=$this->input->post("excerpt");
+					$reg['blog_description']=$this->input->post("blog_description");
+					$reg['blog_status']=$this->input->post("blog_status");
+					
+					if ($reg['id'] == "") {
+						$reg['created']=date('Y-m-d');
+					}
+						$reg['modified']= date('Y-m-d H:i:s');
+
+					
+						$insert = $this->home_model->ChangeBlog($reg);
+							if ($insert) {
+								$this->session->set_flashdata('success', 'Successfully Done');
+								redirect($_SERVER['HTTP_REFERER']);
+							}
+							else{
+								$this->session->set_flashdata('Warning', 'Something Misfortune Happen');
+								redirect($_SERVER['HTTP_REFERER']);	
+							}
+					
+					
+				}
+				else{
+					$this->load->view('admin/inc/header');
+					$this->session->set_flashdata('warning', 'Sorry, Your Account Has Been Inactive. Please Contact Your WebAdministrator');
+					$this->load->view('admin/status');
+					$this->load->view('admin/inc/footer');	
+				}
+			}
+
+		
+		else{
+			redirect('ci-admin');
+		}
+	}
+
+	//Blog Delete
+	public function BlogDelete()
+	{
+		$url= $this->uri->segment(3,0); 
+		$insert =$this->home_model->DeleteBlog($url);
+		if($insert){
+			$this->session->set_flashdata('warning', 'Deleted Successfully');
+			redirect('ci-admin/blog');
+		}
+		else{
+			$this->session->set_flashdata('warning', 'Something Misfortune Happened!');
+			redirect('ci-admin/blog');
+		
+		}
+	}
+
+	//Gallery Section
+
+	//Gallery List
+	public function GalleryList()
+	{
+		$data = $this->session->user_account;
+		if($data){	
+
+				if ($data['users_status']==0) {
+
+					$var['datalist'] = $this->home_model->ListGallery();
+					$this->load->view('admin/inc/header',$data);
+					$this->load->view('admin/gallerylist',$var);
+					$this->load->view('admin/inc/foottile');
+					$this->load->view('admin/inc/footer');
+				}
+				else{
+					$this->load->view('admin/inc/header');
+					$this->session->set_flashdata('warning', 'Sorry, Your Account Has Been Inactive. Please Contact Your WebAdministrator');
+					$this->load->view('admin/status');
+					$this->load->view('admin/inc/footer');	
+				}
+			}
+
+		
+		else{
+			redirect('ci-admin');
+		}
+	}
+
+	//Blog Add View
+	public function GalleryAdd()
+	{
+		$data = $this->session->user_account;
+		if($data){	
+
+				if ($data['users_status']==0) {
+					$this->load->view('admin/inc/header',$data);
+					$urlid = $this->uri->segment(4,0);
+
+					if($urlid){
+						//Update
+						$var['datalist'] = $this->home_model->ListGallery($urlid);
+						$this->load->view('admin/galleryadd',$var);
+					}else{
+						//Add
+						$var['datalist'] = NULL;
+						$this->load->view('admin/galleryadd',$var);
+					}
+
+					$this->load->view('admin/inc/foottile');
+					$this->load->view('admin/inc/footer');
+				}
+				else{
+					$this->load->view('admin/inc/header');
+					$this->session->set_flashdata('warning', 'Sorry, Your Account Has Been Inactive. Please Contact Your WebAdministrator');
+					$this->load->view('admin/status');
+					$this->load->view('admin/inc/footer');	
+				}
+			}
+
+		
+		else{
+			redirect('ci-admin');
+		}
+	}
+
+	//Blog Insert And Update
+	public function Galleryinsert()
+	{
+		
+		$data = $this->session->user_account;
+		if($data){	
+
+				if ($data['users_status']==0) {
+					
+					$dir ='uploads/gallery';
+					if (!is_dir($dir)) {
+						mkdir($dir, 0755, TRUE);
+					}
+					$config['upload_path'] =  $dir;
+			        $config['allowed_types'] = 'jpg|png|jpeg';
+			        $config['max_size'] = 3000;
+			        $this->load->library('upload', $config);
+					$this->upload->initialize($config);
+
+					if($this->upload->do_upload('image')){
+			 		$image= $this->upload->data();
+					$reg['image'] =$image['file_name'];}
+					else{
+						//Keep Empty For Image
+					}
+					$reg['id']=$this->input->post("id");
+					$reg['title']=$this->input->post("title");
+					$reg['subtitle']=$this->input->post("subtitle");
+					$reg['blurb']=$this->input->post("blurb");
+					$reg['category']=$this->input->post("category");;
+					$reg['status']=$this->input->post("status");
+					
+					if ($reg['id'] == "") {
+						$reg['created']=date('Y-m-d');
+					}
+						$reg['modified']= date('Y-m-d H:i:s');
+
+					
+						$insert = $this->home_model->ChangeGallery($reg);
+							if ($insert) {
+								$this->session->set_flashdata('success', 'Successfully Done');
+								redirect($_SERVER['HTTP_REFERER']);
+							}
+							else{
+								$this->session->set_flashdata('Warning', 'Something Misfortune Happen');
+								redirect($_SERVER['HTTP_REFERER']);	
+							}
+					
+					
+				}
+				else{
+					$this->load->view('admin/inc/header');
+					$this->session->set_flashdata('warning', 'Sorry, Your Account Has Been Inactive. Please Contact Your WebAdministrator');
+					$this->load->view('admin/status');
+					$this->load->view('admin/inc/footer');	
+				}
+			}
+
+		
+		else{
+			redirect('ci-admin');
+		}
+	}
+
+	//Blog Delete
+	public function GalleryDelete()
+	{
+		$url= $this->uri->segment(3,0); 
+		$insert =$this->home_model->DeleteGallery($url);
+		if($insert){
+			$this->session->set_flashdata('warning', 'Deleted Successfully');
+			redirect('ci-admin/gallery');
+		}
+		else{
+			$this->session->set_flashdata('warning', 'Something Misfortune Happened!');
+			redirect('ci-admin/gallery');
+		
+		}
+	}
+
 }

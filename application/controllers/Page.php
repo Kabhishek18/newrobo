@@ -10,6 +10,7 @@ class Page extends CI_Controller {
         $this->load->helper(array('url','html','form'));
     
 		$this->load->model('cart_model');
+		$this->load->model('page_model');
         //Model
 		if ($this->config->item('secure_site')) {
 			force_ssl();
@@ -29,7 +30,57 @@ class Page extends CI_Controller {
 		$this->load->view('about');
 		$this->load->view('inc/footer');
     }
+	
+	public function Blog()
+	{
+		$this->load->view('inc/header');
+		$this->load->view('blog');
+		$this->load->view('inc/footer');
+    }
+    public function Gallery()
+	{
+		$this->load->view('inc/header');
+		$this->load->view('gallery');
+		$this->load->view('inc/footer');
+    }
     
+    public function BlogDetail()
+    {		
+		$blogid = $this->uri->segment(2,0);
+		if(!empty($blogid)){
+			$blog = $this->page_model->ListBlog($blogid);
+			$this->load->view('inc/header');
+			$this->load->view('blogdetail',$blog);
+			$this->load->view('inc/footer');
+		}
+		else{
+			redirect('404');
+		}
+    }
+
+    public function ReviewInsert()
+    {
+        $data['review_name'] =$this->input->post('review_name');
+        $data['review_email'] =$this->input->post('review_email');
+        $data['review_phone'] =$this->input->post('review_phone');
+        $data['review_description'] =$this->input->post('review_description');
+        $data['review_blog_id'] =$this->input->post('review_blog_id');
+        $data['review_status'] = '0';
+    	$data['created'] =  date('Y-m-d H:s:i');  
+       	 $insert=$this->page_model->InsertReview($data);
+
+	    //    Insert
+	        if ($insert) {
+	    	$this->session->set_flashdata('success', 'Comment Submitted successfully');
+				redirect('blog/'.$data['review_blog_id']);
+	    
+	        }else{
+	        	$this->session->set_flashdata('warning', 'Something Misfortune Happen !');
+				redirect('blog/'.$data['review_blog_id']);
+	        } 
+		
+    }
+
     public function Contact()
 	{
 		$this->load->view('inc/header');

@@ -19,11 +19,14 @@
 								<h6 class="f_head"><span class="footer_heading">Courses</span><span class="footer_line"></span></h6>
 								<div class="col_inner_box">
 									<ul>
-										<li><a href="Little_Champs.html">Little Champs</a></li>
-										<li><a href="Junior-scientists.html">Junior Scientists</a></li>
-										<li><a href="Young-engineers.html">Young Engineers</a></li>
+										<?php $plists = $this->cart_model->Getcat();
+											foreach($plists as $list){?>	
+			                            <li >
+			                                <a href="<?=base_url()?>courses/<?=$list['id']?>/<?=$list['cat_name']?>"><b><?=$list['cat_name']?></b></a>
+			                            </li>
+									<?php }?>		
 									 
-										<li><a href="gallery.html">Gallery</a></li>
+										<li><a href="<?=base_url()?>gallery">Gallery</a></li>
 						
 									 
 									</ul>

@@ -236,8 +236,9 @@
                                                  <div class="col-sm-6">
                                                      <div class="form-group">
                                                         <div class="controls">
+                                                            <?php if(!empty($datalist['product_image'])){ ?>
                                                             <img src="<?=base_url()?>uploads/<?=$datalist['product_image']?>" width =250px>
-                                                            
+                                                            <?php }?>
                                                         </div>
                                                     </div>
                                                 </div>

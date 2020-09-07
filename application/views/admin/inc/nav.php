@@ -71,7 +71,7 @@
 
                 <li class=" navigation-header"><span>Categories, Courses</span>
                 </li>
-                <li class=" nav-item"><a href="<?=base_url()?>ci-admin/tutor"><i class="feather icon-list"></i><span class="menu-title" data-i18n="User">Courses,Category</span></a>
+                <li class=" nav-item"><a href="javascript:void(0)"><i class="feather icon-list"></i><span class="menu-title" data-i18n="User">Courses,Category</span></a>
                     <ul class="menu-content">
                         <li><a href="<?=base_url()?>ci-admin/category"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="View">Category</span></a>
                         </li>
@@ -79,7 +79,17 @@
                         </li>
                     </ul>
                 </li>
-               
+                
+                <li class=" navigation-header"><span>Blog</span>
+                </li>
+                <li class=" nav-item"><a href="<?=base_url()?>ci-admin/blog"><i class="feather icon-list"></i><span class="menu-title" data-i18n="User">Blog</span></a>
+                </li>
+
+                <li class=" navigation-header"><span>Gallery</span>
+                </li>
+                <li class=" nav-item"><a href="<?=base_url()?>ci-admin/gallery"><i class="feather icon-list"></i><span class="menu-title" data-i18n="User">Gallery</span></a>
+                </li>
+
                 <li class=" navigation-header"><span>Student</span>
                 </li>
                 <li class=" nav-item"><a href="<?=base_url()?>ci-admin/student"><i class="feather icon-user"></i><span class="menu-title" data-i18n="User">Student</span></a>

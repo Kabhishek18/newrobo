@@ -9,6 +9,8 @@ class Home_model extends CI_Model
         $this->students   = 'users';
         $this->category   = 'cat';
         $this->course   = 'product';
+        $this->blog   = 'blog';
+        $this->gallery   = 'gallery';
     }
 
 
@@ -147,5 +149,88 @@ class Home_model extends CI_Model
     }
 
 
+    public function ListBlog($id = '')
+    {
+        $this->db->select('*');
+        $this->db->from($this->blog);
+       
+        if($id){
+            $array = array('id' => $id);
+            $this->db->where($array);
+            $query  = $this->db->get();
+            $result = $query->row_array();
+        }else{
+            $query  = $this->db->get();
+            $result = $query->result_array();
+        }
+        
+        // return fetched data
+        return !empty($result)?$result:false;
+    }
 
+    public function ChangeBlog($reg)
+    {   
+        if ($reg['id']) {
+            $this->db->where('id',$reg['id']);
+            $update = $this->db->update($this->blog,$reg);
+            return $update?true:false;
+        }
+        else{
+            $insert = $this->db->insert($this->blog,$reg);
+            return $insert?true:false;
+        }
+    }
+
+    public function DeleteBlog($reg)
+    {
+        $this->db->where('id',$reg);
+        $update = $this->db->delete($this->blog);
+       return $update?true:false;
+    }
+
+
+      public function ListGallery($id = '')
+    {
+        $this->db->select('*');
+        $this->db->from($this->gallery);
+       
+        if($id){
+            $array = array('id' => $id);
+            $this->db->where($array);
+            $query  = $this->db->get();
+            $result = $query->row_array();
+        }else{
+            $query  = $this->db->get();
+            $result = $query->result_array();
+        }
+        
+        // return fetched data
+        return !empty($result)?$result:false;
+    }
+
+    public function ChangeGallery($reg)
+    {   
+        if ($reg['id']) {
+            $this->db->where('id',$reg['id']);
+            $update = $this->db->update($this->gallery,$reg);
+            return $update?true:false;
+        }
+        else{
+            $insert = $this->db->insert($this->gallery,$reg);
+            return $insert?true:false;
+        }
+    }
+
+    public function DeleteGallery($reg)
+    {
+        $this->db->where('id',$reg);
+        $update = $this->db->delete($this->gallery);
+       return $update?true:false;
+    }
+    public function DeleteStudent($reg)
+    {
+        $this->db->where('users_id',$reg);
+        $update = $this->db->delete($this->students);
+       return $update?true:false;
+    }
 }

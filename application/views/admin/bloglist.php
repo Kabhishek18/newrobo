@@ -10,12 +10,12 @@
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
-                            <h2 class="content-header-title float-left mb-0">Student</h2>
+                            <h2 class="content-header-title float-left mb-0">Blog</h2>
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="<?=base_url('dashboard')?>">Home</a>
+                                    <li class="breadcrumb-item"><a href="<?=base_url('ci-admin/dashboard')?>">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Student List
+                                    <li class="breadcrumb-item active">Blog List
                                     </li>
                                 </ol>
                             </div>
@@ -51,7 +51,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Column selectors with Export and Print Options</h4>
+                                    <h4 class="card-title"><a href="<?=base_url()?>ci-admin/blog/add" class="btn btn-outline-light mr-1 mb-1 waves-effect waves-light">Blog Add</a> </h4>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body card-dashboard">
@@ -62,27 +62,30 @@
                                             <table class="table dataex-html5-selectors">
                                                 <thead>
                                                     <tr>
+                                                        <th>Blog Id</th>
                                                         <th>Name</th>
-                                                        <th>Email</th>
                                                         <th>Status</th>
-                                                        <th>Action</th>
+                                                        <th>Created</th>
+                                                        <th>Last Modified</th>
+                                                        <th>Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                    <?php foreach($datalist as $items):?>
                                                     <tr>
-                                                        <td><?=$items['users_name']?></td>
-                                                        <td><?=$items['users_email']?></td>
-                                                     
-                                                        <td><?=($items['users_status']==0?'Active':'Inactive')?></td>
+                                                        <td><?=$items['id']?></td>
+                                                          <td><b><?=$items['blog_title']?></b></td>
+                                                       <td><?=($items['blog_status']==0?'Active':'Inactive')?></td>
+                                                        <td><?=date('F,d Y:h:i:s',strtotime($items['created']))?></td>
+                                                        <td><?=date('F,d Y:h:i:s',strtotime($items['modified']))?></td>
                                                         <td>
                                                             <span class="action-edit">
-                                                                <a href="<?=base_url()?>ci-admin/student/<?=$items['users_id']?>" onclick="return confirm('Are you want to Inactive it?')">
+                                                                <a href="<?=base_url()?>ci-admin/blog/edit/<?=$items['id']?>">
                                                                  <i class="feather icon-edit"></i>
                                                                 </a>
                                                             </span>
                                                             <span class="action-delete">
-                                                                <a href="<?=base_url()?>home/StudentDelete" onclick="return confirm('Are you sure, you want to delete it?')">
+                                                                <a href="<?=base_url()?>Home/BlogDelete/<?=$items['id']?>" onclick="return confirm('Are you sure, you want to delete it?')">
                                                                     <i class="feather icon-trash"></i>
                                                                 </a>
                                                             </span>
@@ -92,10 +95,12 @@
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
+                                                         <th>Blog Id</th>
                                                         <th>Name</th>
-                                                        <th>Email</th>
                                                         <th>Status</th>
-                                                        <th>Action</th>
+                                                        <th>Created</th>
+                                                        <th>Last Modified</th>
+                                                        <th>Actions</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
