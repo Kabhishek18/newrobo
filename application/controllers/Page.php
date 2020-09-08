@@ -154,7 +154,7 @@ class Page extends CI_Controller {
 		$order['state'] =$this->input->post('state');
 		$order['zip'] =$this->input->post('zip');
 		
-		$data['order_cart'] = json_encode($_SESSION['checkout']['pro']['id']); 
+		$data['order_cart'] = $_SESSION['checkout']['pro']['id']; 
 
 		$data['order_detail'] =json_encode($order);
 			if($_SESSION['checkout']['selection'] == 1){
@@ -165,7 +165,7 @@ class Page extends CI_Controller {
 	         $data['order_amount'] =  $_SESSION['checkout']['pro']['champion_price'];
 	          }
 	    //Order Created/Status    
-	    $data['order_id'] =uniqid('robo',true);  
+	    $data['order_id'] =uniqid('robo',true); //Changing in razorPaySuccess Function 
         $data['order_created'] = date('d/m/Y');  
         $data['order_status'] = 0;
         //
@@ -195,22 +195,21 @@ class Page extends CI_Controller {
                'product_id' => $this->input->post('product_id'),
             ];
      $insert = $this->db->insert('payments', $data);
+     $_SESSION['orderdata']['order_id'] =$data['payment_id'];
      $arr = array('msg' => 'Payment successfully credited', 'status' => true); 
      echo json_encode($arr); 
     
     }
     public function RazorThankYou()
     {
+    	if($_SESSION['orderdata']){	
 	  $orderdata =$_SESSION['orderdata'];	
       $insert=$this->cart_model->InsertOrder($orderdata);
-
 	    //    Insert
 	        if ($insert) {
-	        	echo "<h1>";
 	        	 $this->load->view('inc/header');
-	        	echo "</h1>";
-	        	echo "Your Purchase Order Has Been Confirmed with Order Id ".$insert;
-	        	 $this->load->view('razorthankyou');
+	        	$speech['speech']= "Your Purchase Order Has Been Confirmed with Order Id : ".$insert;
+	        	 $this->load->view('razorthankyou',$speech);
 	        	 $this->session->unset_userdata('checkout');	
 				$this->session->unset_userdata('orderdata');
 	        	 $this->load->view('inc/footer');
@@ -219,6 +218,10 @@ class Page extends CI_Controller {
 	        	$this->session->set_flashdata('warning', 'Something Misfortune Happen !');
 				redirect('checkout');
 	        } 
+	    }
+	    else{
+	    	redirect('');
+	    }    
     
    		
     }
@@ -231,5 +234,59 @@ class Page extends CI_Controller {
     public function PageNotFound()
     {
     	$this->load->view('404');
+    }
+    public function ContactMail()
+    {
+					$name =$this->input->post('name');
+					$email =$this->input->post('email');
+					$phone =$this->input->post('phone');
+					$message =$this->input->post('message');
+					$messagebomb = '<p> Name : '.$name.'</p><p> Email : '.$email.'</p><p> Phone : '.$phone.'</p><p> Message : '.$message.'</p>';
+
+
+						$this->load->library('phpmailer_lib');
+
+						// PHPMailer object
+						$mail = $this->phpmailer_lib->load();
+
+						// SMTP configuration
+						$mail->isSMTP();
+						$mail->Host     = 'mail.kabhishek18.com';
+						$mail->SMTPAuth = true;
+						$mail->Username = 'info@kabhishek18.com';
+						$mail->Password = 'info@987';
+						$mail->SMTPSecure = 'tls';
+						$mail->Port     = 587;
+
+						$mail->setFrom('info@kabhishek18.com', 'info@kabhishek18.com');
+						$mail->addReplyTo('info@kabhishek18.com', 'info@kabhishek18.com');
+
+						// Add a recipient
+						$mail->addAddress('kabhishek18@gmail.com');
+
+						// Add cc or bcc 
+						//$mail->addCC('');
+						//$mail->addBCC('');
+
+						// Email subject
+						$mail->Subject =  'Contact Mail';
+
+						// Set email format to HTML
+						$mail->isHTML(true);
+
+						// Email body content
+						$mailContent = $messagebomb;
+						$mail->Body = $mailContent;
+
+						// Send email
+						if(!$mail->send()){
+							$mail->ErrorInfo;
+
+						}
+					
+						$this->session->set_flashdata('success', 'Thank You, Mail Has Been received');
+						redirect('contactus');
+	
+
     }
 }

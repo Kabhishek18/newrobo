@@ -12,6 +12,8 @@ $route['contactus'] = 'page/Contact';
 $route['blog'] = 'page/Blog';
 $route['blog/(:num)'] = 'page/BlogDetail';
 $route['gallery'] = 'page/Gallery';
+$route['verify/:any/:any/:any'] = 'home/EmailVerification';
+
 
 
 //Course
@@ -55,6 +57,7 @@ $route['ci-admin/course/add'] ='home/CourseAdd';
 
 //Order
 $route['ci-admin/order'] ='home/OrderList';
+$route['ci-admin/orderinvoice/(:num)'] ='home/InvoiceOrder';
 
 //blog
 $route['ci-admin/blog'] ='home/BlogList';

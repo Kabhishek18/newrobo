@@ -11,6 +11,7 @@ class Home_model extends CI_Model
         $this->course   = 'product';
         $this->blog   = 'blog';
         $this->gallery   = 'gallery';
+        $this->order   = 'userorder';
     }
 
 
@@ -233,4 +234,34 @@ class Home_model extends CI_Model
         $update = $this->db->delete($this->students);
        return $update?true:false;
     }
+
+    public function StatusStudent($value='',$stat ='')
+    {
+        $this->db->where('users_id',$value);
+            $update = $this->db->update($this->students,array('users_status' => $stat));
+            return $update?true:false;
+    }
+
+      public function ListOrder($id = '')
+    {
+        $this->db->select('*');
+        $this->db->from($this->order);
+       
+        if($id){
+            $array = array('id' => $id);
+            $this->db->where($array);
+            $query  = $this->db->get();
+            $result = $query->row_array();
+        }else{
+            $this->db->order_by('order_modified','DESC');
+            $query  = $this->db->get();
+            $result = $query->result_array();
+        }
+        
+        // return fetched data
+        return !empty($result)?$result:false;
+    }
+
+
+
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 07, 2020 at 01:33 AM
+-- Generation Time: Sep 08, 2020 at 05:59 AM
 -- Server version: 10.3.22-MariaDB-1ubuntu1
 -- PHP Version: 7.4.3
 
@@ -61,21 +61,25 @@ CREATE TABLE `blog` (
   `id` int(11) NOT NULL,
   `blog_title` text NOT NULL,
   `blog_author` text NOT NULL,
+  `blurb_1` text NOT NULL,
+  `blurb_2` text NOT NULL,
+  `excerpt` text NOT NULL,
   `blog_image` text DEFAULT NULL,
   `blog_description` text NOT NULL,
-  `blog_create` text NOT NULL,
-  `blog_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `blog_status` enum('0','1') NOT NULL DEFAULT '0',
-  `blog_delete` enum('0','1') NOT NULL DEFAULT '0'
+  `created` text NOT NULL,
+  `modified` timestamp NOT NULL DEFAULT current_timestamp(),
+  `blog_status` enum('0','1') NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `blog`
 --
 
-INSERT INTO `blog` (`id`, `blog_title`, `blog_author`, `blog_image`, `blog_description`, `blog_create`, `blog_modified`, `blog_status`, `blog_delete`) VALUES
-(1, 'THE CURTAIN RAISER', 'Sadhika', 'blog1.jpg', '<p><strong>AND THE JOURNEY BEGINS...</strong></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"color:#000000\">Vaidaan, the tryst between unconventional &amp; handcrafted ethnicity, is a premium luxury line of jewelry that speaks volumes about the convergence of west and east. A modern take on the classics, put together by exuberant crystals and stones and a whole lot of love. Vaidaan is all things profuse and elite.</span></span><span style=\"font-size:11pt\"><span style=\"color:#000000\"><em>&nbsp;</em></span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><em><a href=\"https://vaidaan.com/product/398\">Fashion Curator Earrings</a></em><span style=\"color:#000000\"><em>&nbsp;- Click to Shop</em></span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"color:#000000\">The minds and talent behind the line, Ishita Gupta, holds quite the secrets to what Vaidaan represents. She is a passion fed young entrepreneur in the making and has always been drawn towards being an artist. An expert in Visual Merchandising and Fashion styling, also holding prowess in her artistic skills, believes there could be no better way to climb the stepping stones of her career than by turning them into real life gems &amp; crystals.</span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"color:#000000\">Now, while we&rsquo;re at raising the curtains, this blog is not just going to be a jewelry centric journal, but a compilation of all things trending and ringing fashion bells in India. From jewellery to clothes to shoes &amp; bags. An unprejudiced yet eccentric view of the India&rsquo;s finest. This blog seeks to be your next little black book for a fun saturday night or a successful big fat indian wedding or even a docile lunch with your loved ones on a lazy sunday afternoon. A personal guide at perfecting not just taste but also appreciating what needs to be from time to time, this blog holds all the secrets to your do&rsquo;s &amp; don&rsquo;ts.&nbsp;</span></span></p>\r\n\r\n<p><br />\r\n<span style=\"font-size:11pt\"><span style=\"color:#000000\">So for some raw, edgy yet sophisticated whispers of the town, stay tuned with us,</span></span><span style=\"font-size:11pt\"><span style=\"color:#000000\">&nbsp;while we get you some front row views to behind the scenes shots with all sorts of fun and fashion.</span></span></p>\r\n\r\n<hr />\r\n<p><img alt=\"heart\" src=\"https://cdn.ckeditor.com/4.14.0/full/plugins/smiley/images/heart.png\" style=\"height:23px; width:23px\" title=\"heart\" />&nbsp;<span style=\"color:#95a5a6\">XoXo - Team Vaidaan&nbsp;</span></p>\r\n', '2020-07-28,04:49:15pm', '2020-09-04 18:07:30', '0', '0'),
-(2, 'PAHAL - The Beginning', 'Krithika', 'blog3.jpg', '<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">Putting together pretty pastels and precise embroidery, Vaidaan gave rise to it&#39;s primitive collection - Pahal that brought together elements of art, sophistication and panache.&nbsp;&nbsp;</span></span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">(<a href=\"https://vaidaan.com/product/373\">Quadcircles Earrings</a>&nbsp;- Click to Shop)</span></span></span></p>\r\n\r\n<p><img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/Gladiator_Earrings2.jpg\" style=\"height:300px; width:300px\" />&nbsp;&nbsp;<img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/Windmill_Earrings2.jpg\" style=\"height:300px; width:300px\" /></p>\r\n\r\n<p><em>( Left -&nbsp;<a href=\"https://vaidaan.com/product/370\">Gladiator Earrings</a>, Right -&nbsp;<a href=\"https://vaidaan.com/product/376\">Windmill Earrings</a>&nbsp;- Click to Shop )</em></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">It reflects careful deliberation, intricate weaves and a lot of charm through its beautiful zari work that outlines the closely knit threads and mesh work. It is these little elements that turn these trinkets into everlasting baubles.&nbsp;</span></span></span></p>\r\n\r\n<p><img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/Quadcircles_Ring3(1000X).jpg\" style=\"height:300px; width:300px\" />&nbsp;&nbsp;<img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/Quadcircles_Earrings1.JPG\" style=\"height:300px; width:300px\" /></p>\r\n\r\n<p><em>( Left -&nbsp;<a href=\"https://vaidaan.com/product/75\">Quadcircles Ring</a>, Right -&nbsp;<a href=\"https://vaidaan.com/product/372\">Quadcircles Earrings</a>&nbsp;- Click to Shop )</em></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">Put them together with Evening gowns or adorn them with a crisp blouse and Chiffon saris, use them at your beck and call to dress up or dress down as perfectly as your occasion might be.&nbsp;</span></span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\"><img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/Trinity_Earrings2.JPG\" style=\"height:300px; width:300px\" />&nbsp;&nbsp;<img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/FlimFlam_Earrings2.JPG\" style=\"height:300px; width:300px\" /></span></span></span></p>\r\n\r\n<p><em>( Left -&nbsp;<a href=\"https://vaidaan.com/product/375\">Trinity Earrings</a>, Right -&nbsp;<a href=\"https://vaidaan.com/product/369\">FlimFlam Earrings</a>&nbsp;- Click to Shop )</em></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">Play along with the abstract geometric designs that merge well with the dual and triple toned jewels and bring out a rather subtle yet emphatic side of yourself to the world.&nbsp;</span></span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">It is a finespun collection that doesn&rsquo;t steal but adds to the focus of your entire look and completes it for you in the perfect amount of sparkle and sass.</span></span></span></p>\r\n\r\n<hr />\r\n<p><span style=\"color:#7f8c8d\"><em><img alt=\"heart\" src=\"https://cdn.ckeditor.com/4.14.0/full/plugins/smiley/images/heart.png\" style=\"height:23px; width:23px\" title=\"heart\" />&nbsp;XoXo - Team Vaidaan&nbsp;</em></span></p>\r\n', '2020-07-28,04:48:09pm', '2020-09-04 18:07:30', '0', '0');
+INSERT INTO `blog` (`id`, `blog_title`, `blog_author`, `blurb_1`, `blurb_2`, `excerpt`, `blog_image`, `blog_description`, `created`, `modified`, `blog_status`) VALUES
+(1, 'What is the correct age of kids for learning coding in the 21st century?', 'Test32', 'Test2', 'asd', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>\r\n', '67.jpg', '<p>&nbsp;</p>\r\n\r\n<p><strong>Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum suspendisse. Bibendum nulla lacus metus, egestas eu sagittis vel, eleifend pretium tellus. Etiam quis orci gravera etos augue. Vestibulum hendrerit sem risus, ut tincidunt tellus at vehicula. Mauris pharetra nibh non quam condimentum, faucibus tristique.</strong></p>\r\n\r\n<p><br />\r\n<strong>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</strong></p>\r\n\r\n<h4><strong>Gravida maecenas node</strong></h4>\r\n\r\n<p><br />\r\n<strong>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</strong></p>\r\n\r\n<p><strong>Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum suspendisse. Bibendum nulla lacus metus, egestas eu sagittis vel, eleifend pretium tellus. Etiam quis orci gravera etos augue. Vestibulum hendrerit sem risus, ut tincidunt tellus at vehicula. Mauris pharetra nibh non quam condimentum, faucibus tristique.</strong></p>\r\n\r\n<p><br />\r\n<strong>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</strong></p>\r\n\r\n<h5><strong>Gravida maecenas node</strong></h5>\r\n\r\n<p><br />\r\n<strong>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</strong></p>\r\n\r\n<p><strong>Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum suspendisse. Bibendum nulla lacus metus, egestas eu sagittis vel, eleifend pretium tellus. Etiam quis orci gravera etos augue. Vestibulum hendrerit sem risus, ut tincidunt tellus at vehicula. Mauris pharetra nibh non quam condimentum, faucibus tristique.</strong></p>\r\n\r\n<p><br />\r\n<strong>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</strong></p>\r\n\r\n<h6><strong>Gravida maecenas node</strong></h6>\r\n\r\n<p><br />\r\n<strong>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</strong></p>\r\n\r\n<p><strong>Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum suspendisse. Bibendum nulla lacus metus, egestas eu sagittis vel, eleifend pretium tellus. Etiam quis orci gravera etos augue. Vestibulum hendrerit sem risus, ut tincidunt tellus at vehicula. Mauris pharetra nibh non quam condimentum, faucibus tristique.</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n', '2020-07-28,04:49:15pm', '2020-09-07 17:59:16', '0'),
+(2, 'PAHAL - The Beginning', 'Krithika', 'Test', 'Test', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum', 'blog3.jpg', '<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">Putting together pretty pastels and precise embroidery, Vaidaan gave rise to it&#39;s primitive collection - Pahal that brought together elements of art, sophistication and panache.&nbsp;&nbsp;</span></span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">(<a href=\"https://vaidaan.com/product/373\">Quadcircles Earrings</a>&nbsp;- Click to Shop)</span></span></span></p>\r\n\r\n<p><img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/Gladiator_Earrings2.jpg\" style=\"height:300px; width:300px\" />&nbsp;&nbsp;<img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/Windmill_Earrings2.jpg\" style=\"height:300px; width:300px\" /></p>\r\n\r\n<p><em>( Left -&nbsp;<a href=\"https://vaidaan.com/product/370\">Gladiator Earrings</a>, Right -&nbsp;<a href=\"https://vaidaan.com/product/376\">Windmill Earrings</a>&nbsp;- Click to Shop )</em></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">It reflects careful deliberation, intricate weaves and a lot of charm through its beautiful zari work that outlines the closely knit threads and mesh work. It is these little elements that turn these trinkets into everlasting baubles.&nbsp;</span></span></span></p>\r\n\r\n<p><img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/Quadcircles_Ring3(1000X).jpg\" style=\"height:300px; width:300px\" />&nbsp;&nbsp;<img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/Quadcircles_Earrings1.JPG\" style=\"height:300px; width:300px\" /></p>\r\n\r\n<p><em>( Left -&nbsp;<a href=\"https://vaidaan.com/product/75\">Quadcircles Ring</a>, Right -&nbsp;<a href=\"https://vaidaan.com/product/372\">Quadcircles Earrings</a>&nbsp;- Click to Shop )</em></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">Put them together with Evening gowns or adorn them with a crisp blouse and Chiffon saris, use them at your beck and call to dress up or dress down as perfectly as your occasion might be.&nbsp;</span></span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\"><img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/Trinity_Earrings2.JPG\" style=\"height:300px; width:300px\" />&nbsp;&nbsp;<img alt=\"\" src=\"https://vaidaan.com/resource/upload/product/FlimFlam_Earrings2.JPG\" style=\"height:300px; width:300px\" /></span></span></span></p>\r\n\r\n<p><em>( Left -&nbsp;<a href=\"https://vaidaan.com/product/375\">Trinity Earrings</a>, Right -&nbsp;<a href=\"https://vaidaan.com/product/369\">FlimFlam Earrings</a>&nbsp;- Click to Shop )</em></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">Play along with the abstract geometric designs that merge well with the dual and triple toned jewels and bring out a rather subtle yet emphatic side of yourself to the world.&nbsp;</span></span></span></p>\r\n\r\n<p><span style=\"font-size:11pt\"><span style=\"font-family:Arial\"><span style=\"color:#000000\">It is a finespun collection that doesn&rsquo;t steal but adds to the focus of your entire look and completes it for you in the perfect amount of sparkle and sass.</span></span></span></p>\r\n\r\n<hr />\r\n<p><span style=\"color:#7f8c8d\"><em><img alt=\"heart\" src=\"https://cdn.ckeditor.com/4.14.0/full/plugins/smiley/images/heart.png\" style=\"height:23px; width:23px\" title=\"heart\" />&nbsp;XoXo - Team Vaidaan&nbsp;</em></span></p>\r\n', '2020-07-28,04:48:09pm', '2020-09-04 18:07:30', '0'),
+(3, 'TEst', 'TEst', 'Test', 'Test', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum', '662.jpg', '<p>asdhbhasdbhabshdbhabhdbh</p>\r\n', '2020-09-07', '2020-09-07 15:48:00', '0'),
+(4, 'Test', 'asd', 'Test', 'Test', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum', '4.jpg', '<p>asdd</p>\r\n', '2020-09-07', '2020-09-07 15:48:48', '0');
 
 -- --------------------------------------------------------
 
@@ -133,6 +137,38 @@ INSERT INTO `coupon` (`id`, `coupon_name`, `coupon_type`, `coupon_value`, `coupo
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `id` int(11) NOT NULL,
+  `image` text NOT NULL,
+  `title` text NOT NULL,
+  `subtitle` text NOT NULL,
+  `blurb` text NOT NULL,
+  `category` text NOT NULL,
+  `status` enum('0','1') NOT NULL,
+  `created` date NOT NULL,
+  `modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`id`, `image`, `title`, `subtitle`, `blurb`, `category`, `status`, `created`, `modified`) VALUES
+(1, 'pagenotfoundbg.jpg', 'TYe1253123', 'test', 'aasdas', 'gallery1', '0', '2020-09-08', '2020-09-07 20:01:39'),
+(2, '3.jpg', 'TYe1253123', 'test', 'aasdas', 'gallery1', '0', '2020-09-08', '2020-09-07 19:59:47'),
+(3, '2.jpg', 'TYe1253123', 'test', 'aasdas', 'gallery2', '0', '2020-09-08', '2020-09-07 20:05:19'),
+(4, '4.jpg', 'TYe1253123', 'test', 'aasdas', 'gallery3', '0', '2020-09-08', '2020-09-07 20:02:25'),
+(5, '4.jpg', 'TYe1253123', 'test', 'aasdas', 'gallery2', '0', '2020-09-08', '2020-09-07 20:01:39'),
+(6, '7.jpg', 'TYe1253123', 'test', 'aasdas', 'gallery3', '0', '2020-09-08', '2020-09-07 19:59:47'),
+(7, 'pagenotfoundbg.jpg', 'TYe1253123', 'test', 'aasdas', 'gallery2', '0', '2020-09-08', '2020-09-07 20:03:23'),
+(8, '4.jpg', 'TYe1253123', 'test', 'aasdas', 'gallery3', '0', '2020-09-08', '2020-09-07 20:02:25');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `payments`
 --
 
@@ -149,7 +185,9 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`id`, `user_id`, `product_id`, `payment_id`, `amount`) VALUES
-(1, '1', '1', 'pay_FZoxS8ivuGi5KV', '1');
+(1, '1', '1', 'pay_FZoxS8ivuGi5KV', '1'),
+(2, '1', '1', 'pay_FaHz7p2iKiZDnN', '1'),
+(3, '1', '2', 'pay_FaI5DRa4NBRrpd', '499');
 
 -- --------------------------------------------------------
 
@@ -208,13 +246,27 @@ CREATE TABLE `review` (
   `id` int(11) NOT NULL,
   `review_name` text NOT NULL,
   `review_email` text NOT NULL,
+  `review_phone` text NOT NULL,
   `review_description` text NOT NULL,
-  `review_star` int(11) NOT NULL,
-  `review_product_id` text NOT NULL,
-  `review_status` enum('0','1') NOT NULL DEFAULT '1',
-  `review_created` datetime DEFAULT NULL,
-  `review_modified` timestamp NULL DEFAULT NULL
+  `review_blog_id` text NOT NULL,
+  `review_status` enum('0','1') NOT NULL DEFAULT '0',
+  `created` datetime NOT NULL,
+  `modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`id`, `review_name`, `review_email`, `review_phone`, `review_description`, `review_blog_id`, `review_status`, `created`, `modified`) VALUES
+(1, 'test', 'test@mail.com', '789456123', 'Test', '1', '0', '2020-09-08 00:10:04', '2020-09-07 18:46:38'),
+(2, 'test', 'test@mail.com', '789456123', 'Test', '1', '0', '2020-09-08 00:10:04', '2020-09-07 18:46:31'),
+(3, 'test', 'test@mail.com', '789456123', 'Test', '1', '0', '2020-09-08 00:10:04', '2020-09-07 18:34:10'),
+(4, 'test', 'test@mail.com', '789456123', 'Test', '1', '0', '2020-09-08 00:10:04', '2020-09-07 18:46:35'),
+(5, 'test', 'test@mail.com', '789456123', 'Test', '2', '0', '2020-09-08 00:10:04', '2020-09-07 18:46:38'),
+(6, 'test', 'test@mail.com', '789456123', 'Test', '2', '0', '2020-09-08 00:10:04', '2020-09-07 18:46:31'),
+(7, 'test', 'test@mail.com', '789456123', 'Test', '3', '0', '2020-09-08 00:10:04', '2020-09-07 18:34:10'),
+(8, 'test', 'test@mail.com', '789456123', 'Test', '4', '0', '2020-09-08 00:10:04', '2020-09-07 18:46:35');
 
 -- --------------------------------------------------------
 
@@ -241,7 +293,9 @@ CREATE TABLE `userorder` (
 --
 
 INSERT INTO `userorder` (`id`, `order_id`, `order_userid`, `order_amount`, `order_cart`, `order_detail`, `billing_address`, `order_trans`, `order_created`, `order_modified`, `order_status`) VALUES
-(1, 'robo5f5517428679b0.99666112', '1', '1', '\"1\"', '{\"name\":\"asd\",\"email\":\"asdjnj@asd.asd\",\"address\":\"sjdna\",\"address2\":\"njnjnjnjn\",\"country\":\"njnjnjn\",\"state\":\"jnjnj\",\"zip\":\"njnjn\"}', '', 0, '06/09/2020', '2020-09-06 17:07:41', '');
+(1, 'robo5f5517428679b0.99666112', '1', '1', '1', '{\"name\":\"asd\",\"email\":\"asdjnj@asd.asd\",\"address\":\"sjdna\",\"address2\":\"njnjnjnjn\",\"country\":\"njnjnjn\",\"state\":\"jnjnj\",\"zip\":\"njnjn\"}', '', 0, '06/09/2020', '2020-09-06 17:07:41', ''),
+(2, 'pay_FaHz7p2iKiZDnN', '1', '1', '1', '{\"name\":\"Test\",\"email\":\"Test@gmasdil.das\",\"address\":\"sda\",\"address2\":\"asd\",\"country\":\"das\",\"state\":\"das\",\"zip\":\"ad\"}', '', 0, '08/09/2020', '2020-09-07 21:31:23', ''),
+(3, 'pay_FaI5DRa4NBRrpd', '1', '499', '2', '{\"name\":\"Tast\",\"email\":\"asd@sad.asd\",\"address\":\"asd\",\"address2\":\"ads\",\"country\":\"asd\",\"state\":\"ds\",\"zip\":\"asd\"}', '', 0, '08/09/2020', '2020-09-07 21:37:09', '');
 
 -- --------------------------------------------------------
 
@@ -250,25 +304,26 @@ INSERT INTO `userorder` (`id`, `order_id`, `order_userid`, `order_amount`, `orde
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL DEFAULT 0,
-  `users_name` text NOT NULL,
-  `users_email` text NOT NULL,
+  `users_id` int(11) NOT NULL,
+  `users_name` varchar(255) NOT NULL,
+  `users_email` varchar(255) NOT NULL,
+  `users_email_verify` enum('0','1') NOT NULL DEFAULT '1',
   `users_image` text NOT NULL,
   `users_password` text NOT NULL,
-  `users_address` text NOT NULL,
-  `users_mobile` text NOT NULL,
+  `users_token` text DEFAULT NULL,
+  `users_type` int(11) NOT NULL,
+  `users_account` enum('0','1') NOT NULL,
   `users_status` int(11) NOT NULL,
-  `users_type` enum('0','1','2','3') NOT NULL,
-  `users_created` datetime NOT NULL,
-  `users_modified` timestamp NOT NULL DEFAULT current_timestamp()
+  `date_created` date NOT NULL,
+  `date_modified` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `users_name`, `users_email`, `users_image`, `users_password`, `users_address`, `users_mobile`, `users_status`, `users_type`, `users_created`, `users_modified`) VALUES
-(1, 'Kumar', 'kabhishek18@gmail.com', '', 'e10adc3949ba59abbe56e057f20f883e', 'Test', '8789424497', 0, '0', '2020-09-06 23:15:21', '2020-09-06 17:46:22');
+INSERT INTO `users` (`users_id`, `users_name`, `users_email`, `users_email_verify`, `users_image`, `users_password`, `users_token`, `users_type`, `users_account`, `users_status`, `date_created`, `date_modified`) VALUES
+(1, 'Abhishek', 'kabhishek18@gmail.com', '0', '', 'e10adc3949ba59abbe56e057f20f883e', 'e1ef5301-1296-82d9-20fe-f746efdfb046', 1, '0', 0, '2020-08-06', '2020-09-07 23:25:19');
 
 --
 -- Indexes for dumped tables
@@ -290,6 +345,12 @@ ALTER TABLE `cat`
 -- Indexes for table `coupon`
 --
 ALTER TABLE `coupon`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -317,6 +378,12 @@ ALTER TABLE `userorder`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`users_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -324,7 +391,7 @@ ALTER TABLE `userorder`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `cat`
@@ -339,10 +406,16 @@ ALTER TABLE `coupon`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -354,13 +427,19 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `userorder`
 --
 ALTER TABLE `userorder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `users_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

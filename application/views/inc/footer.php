@@ -54,20 +54,21 @@
 							<div class="col_inner">
 								<h6 class="f_head"><span class="footer_heading">Contact Us</span><span class="footer_line"></span></h6>
 								<div class="col_inner_box">
-										<form>
-										  <div class="form-group">
-										    <input type="email" class="form-control" id="" placeholder="Full Name">
-										  </div>
-										  <div class="form-group">
-										    <input type="number" class="form-control" id="" placeholder="Contact Number">
-										  </div>
+									<form method="Post" action="<?=base_url()?>page/ContactMail">
+                     					 <div class="form-group">
+		                                     <input type="text" name="name" class="form-control" id="inputEmail4" placeholder="Your Name *">
+		                                 </div>
+		 
+		                                 <div class="form-group">
+		                                     <input type="email" name ="email" class="form-control" id="inputPassword4" placeholder="Your E-mail *">
+		                                 </div>
+		 
+		                                 <div class="form-group">
+		                                     <input type="number" name="phone" class="form-control" id="inputEmail4" placeholder="Phone number*">
+		                                 </div>
 
 										  <div class="form-group">
-										    <input type="text" class="form-control" id="" placeholder="Email ID">
-										  </div>
-
-										  <div class="form-group">
-											 <textarea class = "form-control" rows = "3" placeholder = "Course Details"></textarea>
+											 <textarea class = "form-control" name="message" rows = "3" placeholder = "Course Details"></textarea>
 										  </div>
 									 
 										  <button type="submit" class="btn btn-primary">Submit</button>

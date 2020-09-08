@@ -132,6 +132,23 @@ class Home extends CI_Controller {
 		
 		}
 	}
+
+	public function StudentStatus()
+	{
+		$url= $this->uri->segment(3,0); 
+		$stat= $this->uri->segment(4,0); 
+		$stat =1-$stat;
+		$insert =$this->home_model->StatusStudent($url,$stat);
+		if($insert){
+			$this->session->set_flashdata('success', 'Changed Successfully');
+			redirect('ci-admin/student');
+		}
+		else{
+			$this->session->set_flashdata('warning', 'Something Misfortune Happened!');
+			redirect('ci-admin/student');
+		
+		}
+	}
 	//Category List
 	public function CategoryList()
 	{
@@ -713,4 +730,57 @@ class Home extends CI_Controller {
 		}
 	}
 
+public function OrderList()
+	{
+		$data = $this->session->user_account;
+		if($data){	
+
+				if ($data['users_status']==0) {
+					
+					$var['datalist'] = $this->home_model->ListOrder();
+					$this->load->view('admin/inc/header',$data);
+					$this->load->view('admin/orderlist',$var);
+					$this->load->view('admin/inc/foottile');
+					$this->load->view('admin/inc/footer');
+				}
+				else{
+					$this->load->view('admin/inc/header');
+					$this->session->set_flashdata('warning', 'Sorry, Your Account Has Been Inactive. Please Contact Your WebAdministrator');
+					$this->load->view('admin/status');
+					$this->load->view('admin/inc/footer');	
+				}
+			}
+
+		
+		else{
+			redirect('ci-admin');
+		}
+	}
+
+	public function InvoiceOrder()
+	{
+		$data = $this->session->user_account;
+		if($data){	
+
+				if ($data['users_status']==0) {
+					$url= $this->uri->segment(3,0); 
+					$var = $this->home_model->ListOrder($url);
+					$this->load->view('admin/inc/header',$data);
+					$this->load->view('admin/invoice',$var);
+					$this->load->view('admin/inc/foottile');
+					$this->load->view('admin/inc/footer');
+				}
+				else{
+					$this->load->view('admin/inc/header');
+					$this->session->set_flashdata('warning', 'Sorry, Your Account Has Been Inactive. Please Contact Your WebAdministrator');
+					$this->load->view('admin/status');
+					$this->load->view('admin/inc/footer');	
+				}
+			}
+
+		
+		else{
+			redirect('ci-admin');
+		}
+	}
 }

@@ -3,7 +3,7 @@
 class Page_model extends CI_Model{
     
 function __construct() {
-        $this->user   = 'user';
+        $this->user   = 'users';
         $this->page   = 'page';
         $this->product   = 'product';
         $this->cat   = 'cat';
@@ -16,7 +16,7 @@ function __construct() {
     {   
         $this->db->select('*');
         $this->db->from($this->user);
-        $array = array('user_email' => $auth['user_email'],'user_password' => $auth['user_password']);
+        $array = array('users_email' => $auth['users_email'],'users_password' => $auth['users_password']);
         $this->db->where($array);
         $query = $this->db->get();
         if($query->num_rows() !=0)
@@ -33,7 +33,7 @@ function __construct() {
     {
         $this->db->select('*');
         $this->db->from($this->user);
-        $array = array('user_email' => $auth['user_email']);
+        $array = array('users_email' => $auth['users_email']);
         $this->db->where($array);
         $query = $this->db->get();
         if($query->num_rows() !=0)

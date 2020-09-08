@@ -150,7 +150,7 @@
 			                <div id="div-forms">
 			                 <?php echo $this->session->flashdata('warning'); ?>
 			                    <!-- Begin # Login Form -->
-			                    <form id="login-form" class="main_form_box" action="<?=base_url()?>student/Authenticate">
+			                    <form id="login-form" class="main_form_box" action="<?=base_url()?>student/Authenticate" method="post">
 			                    	<div class="header_form_t">
 					       				<h3>Login to your account</h3>
 					       				<p>Don't have an account? <button id="login_register_btn" type="button" class="custom_btn">Sign Up Free!</button></p>

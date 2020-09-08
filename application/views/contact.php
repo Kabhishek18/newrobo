@@ -6,7 +6,24 @@
                  </div>
                  
               
- 
+                 <?php if($this->session->flashdata('success')){ ?>
+                    <div class="col-md-12 mb-3">
+                    <div class="alert alert-success" role="alert">
+                                             <p class="mb-0">
+                                                <?php echo $this->session->flashdata('success'); ?>
+                                            </p>
+                                        </div>
+                    </div>                   
+                         <?php }elseif($this->session->flashdata('warning')){ ?>  
+                         <div class="col-md-12 mb-3">
+                       <div class="alert alert-danger" role="alert">
+                                          
+                                            <p class="mb-0">
+                                               <?php echo $this->session->flashdata('warning'); ?>
+                                            </p>
+                                        </div>
+                           </div>             
+                        <?php }?> 
  
          <!---------------------------------------------------Contact-us_Start----------------------------->
          <section class="contact_us_box p_t_50 p_b_50">
@@ -62,26 +79,26 @@
  
   
                  <div class="contact_form">
-                     <form>
+                     <form method="Post" action="<?=base_url()?>page/ContactMail">
                          <div class="form-row">
                              <div class=" col-md-6 form_left">
                                  <div class="form-group">
-                                     <input type="email" class="form-control" id="inputEmail4" placeholder="Your Name *">
+                                     <input type="text" name="name" class="form-control" id="inputEmail4" placeholder="Your Name *">
                                  </div>
  
                                  <div class="form-group">
-                                     <input type="password" class="form-control" id="inputPassword4" placeholder="Your E-mail *">
+                                     <input type="email" name ="email" class="form-control" id="inputPassword4" placeholder="Your E-mail *">
                                  </div>
  
                                  <div class="form-group">
-                                     <input type="number" class="form-control" id="inputEmail4" placeholder="Phone number*">
-                                 </div>
+                                     <input type="number" name="phone" class="form-control" id="inputEmail4" placeholder="Phone number*">
+                                 </div>     
                              </div>
  
  
                              <div class="col-md-6">
                                  <div class="form-group">
-                                      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Message" rows="8 "></textarea>
+                                      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Message" name="message" rows="8 "></textarea>
                                  </div>
                              </div>
                          </div>

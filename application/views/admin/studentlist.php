@@ -77,12 +77,12 @@
                                                         <td><?=($items['users_status']==0?'Active':'Inactive')?></td>
                                                         <td>
                                                             <span class="action-edit">
-                                                                <a href="<?=base_url()?>ci-admin/student/<?=$items['users_id']?>" onclick="return confirm('Are you want to Inactive it?')">
+                                                                <a href="<?=base_url()?>home/StudentStatus/<?=$items['users_id']?>/<?=$items['users_status']?>" onclick="return confirm('Are you willing to change status?')">
                                                                  <i class="feather icon-edit"></i>
                                                                 </a>
                                                             </span>
                                                             <span class="action-delete">
-                                                                <a href="<?=base_url()?>home/StudentDelete" onclick="return confirm('Are you sure, you want to delete it?')">
+                                                                <a href="<?=base_url()?>home/StudentDelete/<?=$items['users_id']?>" onclick="return confirm('Are you sure, you want to delete it?')">
                                                                     <i class="feather icon-trash"></i>
                                                                 </a>
                                                             </span>
