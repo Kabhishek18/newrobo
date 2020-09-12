@@ -12,7 +12,7 @@
 		                        <?php if($this->session->flashdata('success')){ ?>
 		                        <?php echo $this->session->flashdata('success'); } ?>	
 							</h1>
-							<a class="btn btn-large btn-warning" href="<?=base_url()?>home/ResendEmailVerification" > Click Here Resend Verfication Mail</a>
+							<a class="btn btn-large btn-warning" href="<?=base_url()?>student/ResendEmailVerification" > Click Here Resend Verfication Mail</a>
 						</center>
 					
 				</div>

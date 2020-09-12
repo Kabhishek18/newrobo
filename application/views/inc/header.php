@@ -25,6 +25,33 @@
 		<section id="top-strip" class="">
             <div class="container">
                 <div class="row">
+                	<?php if($this->session->flashdata('success')){ ?>
+                    <div class="col-md-12 mb-3">
+                    <div class="alert alert-success" role="alert">
+                                             <p class="mb-0">
+                                                <?php echo $this->session->flashdata('success'); ?>
+                                            </p>
+                                        </div>
+                    </div>                   
+                         <?php }elseif($this->session->flashdata('warning')){ ?>  
+                         <div class="col-md-12 mb-3">
+                       <div class="alert alert-danger" role="alert">
+                                          
+                                            <p class="mb-0">
+                                               <?php echo $this->session->flashdata('warning'); ?>
+                                            </p>
+                                        </div>
+                           </div>             
+                        <?php }elseif($this->session->flashdata('error')){ ?>  
+                         <div class="col-md-12 mb-3">
+                       <div class="alert alert-danger" role="alert">
+                                          
+                                            <p class="mb-0">
+                                               <?php echo $this->session->flashdata('error'); ?>
+                                            </p>
+                                        </div>
+                           </div>             
+                        <?php }?> 
                     <div class="col-md-12">
                         <div class="top-strip-inner">
                             <div class="top-strip_box strip1">
@@ -105,8 +132,18 @@
 		                        <li class="nav-item li_item "><a href="<?=base_url()?>blog" class="nav-link li_item_a"><span class="icon_position icon_size icon_blog"></span>Blog</a></li>
 
 		                        <li class="nav-item li_item "><a href="contactus" class="nav-link li_item_a"><span class="icon_position icon_size icon_contact"></span>Contact</a></li>
-
+		                        <?php $ses =$this->session->student_account;
+		                        if (!empty($ses)) {
+		                        	 $users_name = $ses['users_name'];
+		                        }
+		                        
+		                        if(!empty($users_name)){?>
+		                        <li class="nav-item li_item"><a class="li_item_a" href="<?=base_url()?>dashboard"><?=$users_name?> (Dashboard)</a>
+	                     		<a class="li_item_a" style="color: red!important" href="<?=base_url()?>student/Logout">Logout</a></li>	
+		                        <?php }
+		                        else{?>
 		                        <li class="nav-item li_item "><a class="nav-link li_item_a" href="#" data-toggle="modal" data-target="#exampleModalCenter"><span class="icon_position icon_size icon_login"></span>Login / Signups</a></li>
+		                    	<?php }?>
 		                    </ul>
 		                </div>
 		            </nav>
@@ -120,6 +157,7 @@
 
  
 		<!-----------------------------------Modal_popup_box_start----------------------------------------->
+				<!-----------------------------------Modal_popup_box_start----------------------------------------->
 		<div class="modal header_form_modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 			  <div class="modal-dialog modal-dialog-centered" role="document">
 			    <div class="modal-content">
@@ -128,113 +166,121 @@
 			          <span aria-hidden="true">&times;</span>
 			        </button>
 			        <div class="form-wrap">
-			       		<div class="login_form_left">
-			       				<div class="form_logo"><img src="<?=base_url()?>assets/img/logo.jpg"></div>
-			       				<p>Login using social media to get quick access</p>
-			       				<div class="social_login_box">
-			       					<ul>
-			       						<li class="facebooklogin">
-			       							<a href=""><i class="fa fa-facebook" aria-hidden="true"></i><span>Signin with facebook</span></a>
-			       						</li>
-			       						<li class="twitterlogin">
-			       							<a href=""><i class="fa fa-twitter" aria-hidden="true"></i><span>Signin with twitter</span></a>
-			       						</li>
-			       						<li class="googlepluslogin">
-			       							<a href=""><i class="fa fa-twitter" aria-hidden="true"></i><span>Signin with google</span></a>
-			       						</li>
-			       					</ul>
-			       				</div>
-			       		</div>
-			       		<div class="login_form_right">
-			       			<!-- Begin # DIV Form -->
-			                <div id="div-forms">
-			                 <?php echo $this->session->flashdata('warning'); ?>
-			                    <!-- Begin # Login Form -->
-			                    <form id="login-form" class="main_form_box" action="<?=base_url()?>student/Authenticate" method="post">
-			                    	<div class="header_form_t">
-					       				<h3>Login to your account</h3>
-					       				<p>Don't have an account? <button id="login_register_btn" type="button" class="custom_btn">Sign Up Free!</button></p>
-					       			</div>
-					               
-							    		 	
-							    		<div class="form-group">
-							    			<input id="login_username" name="users_email" class="form-control" type="text" placeholder="Username" required>
-							    		</div>
+						<div class="form2">
+							<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+							  <li class="nav-item">
+								<a class="nav-link " id="pills-sign-tab" data-toggle="pill" href="#pills-sign" role="tab" aria-controls="pills-sign" aria-selected=" true">Sign Up</a>
+							  </li>
 
-							    		<div class="form-group">
-							    		<input id="login_password" class="form-control" name="users_password" type="password" placeholder="Password" required>
-							    		</div>
-			                            <div class="checkbox form-inline">
-			                                <label>
-			                                    <input type="checkbox">Remember me
-			                                </label>
-			                                <button id="login_lost_btn" type="button" class="custom_btn">Forgot Password?</button>
-			                            </div>
-			                            <div>
-			                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-			                            </div>
-			                    </form>
-			                    <!-- End # Login Form -->
-			                    
-			                    <!-- Begin | Lost Password Form -->
-			                    <form id="lost-form" style="display:none;" class="main_form_box">
-			                    	<div class="header_form_t">
-					       				<h3>Recover your Password</h3>
-					       				<p>Fill in your e-mail address below and we will send you an email with futher instructions</p>
-					       			</div>
-			    	    		 
-					    			 	<div class="form-group">
-					    			 		<input id="lost_email" class="form-control" type="text" placeholder="Email address" required>
-					    			 	</div>
-					    		  
-			                            <div>
-			                                <button type="submit" class="btn btn-primary btn-lg btn-block">Recover your Password</button>
-			                            </div>
+							  <li class="nav-item">
+								<a class="nav-link active" id="pills-login-tab" data-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="false">Login</a>
+							  </li>
 
-			                            <div>
-			                                <p class="haveaccount"><button id="lost_login_btn" type="button" class="custom_btn">Already have an account?</button></p>
-			                                <p class="haveaccount">
-			                                <button id="lost_register_btn" type="button" class="custom_btn">Register</button>
+							</ul>
+							<div class="tab-content" id="pills-tabContent">
+							  <div class="tab-pane fade  " id="pills-sign" role="tabpanel" aria-labelledby="pills-sign-tab">
+								<div id="signup">   
+									<form id="register-form" class="main_form_box" method="Post" action="<?=base_url()?>student/Registeration">
+										<div class="header_form_t">
+										<h3>Sign up to your account</h3>
+										</div>
+										
+										<div class="form-group">	    			 	
+											<input id="register_username" class="form-control" type="text" name="username" placeholder="Username" required="">
+										</div>
+										<div class="form-group">
+											<input id="register_email" class="form-control" type="text" name="email" placeholder="E-Mail" required="">
+										</div>
+										<div class="form-group">
+											<input id="register_password" class="form-control" type="password" name="password" placeholder="Password" required="">
+										</div>
+										<div class="form-group">
+											<input id="register_password" class="form-control" type="password" name="cpassword"  placeholder="Confirm Password" required="">
+										</div>
+										<div>
+											<button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up with email</button>
+										</div>
+									</form>
+								</div>
+							  </div>
 
-			                            </p>
-			                            </div>
-					    		     
-			                    </form>
-			                    <!-- End | Lost Password Form -->
-			                    
-			                    <!-- Begin | Register Form -->
-			                    <form id="register-form" style="display:none;" class="main_form_box">
-			                    	<div class="header_form_t">
-					       				<h3>Sign up to your account</h3>
-					       			</div>
-			            		    
-					    				<div class="form-group">	    			 	
-					    					<input id="register_username" class="form-control" type="text" placeholder="Username" required>
-					    				</div>
-
-					    				<div class="form-group">
-			                            	<input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
-			                        	</div>
-
-			                        	<div class="form-group">
-			                           	 <input id="register_password" class="form-control" type="password" placeholder="Password" required>
-			                        	</div>
-			            			 
-					    		  
-			                            <div>
-			                                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up with email</button>
-			                            </div>
-			                           
-			                            <p class="haveaccount"> <button id="register_login_btn" type="button" class="custom_btn">Already have an account?</button>	</p>
-					    		    
-			                    </form>
-			                    <!-- End | Register Form -->
-			                </div>
-			                <!-- End # DIV Form --> 
-			       		</div>
+							  <div class="tab-pane fade  show active " id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+								<div id="login">   
+									<form id="login-form" class="main_form_box" method="post"
+									action="<?=base_url()?>student/Authenticate" >
+										<div class="header_form_t">
+											<h3>Login to your account</h3>
+										</div>
+										<div class="form-group">
+											<input id="login_username" class="form-control" type="text" name="users_email" placeholder="Username" required="">
+										</div>
+										<div class="form-group">
+											<input id="login_password" class="form-control" type="password" name="users_password" placeholder="Password" required="">
+										</div>
+										<div class="checkbox form-inline">
+											<label>
+											<input type="checkbox">Remember me
+											</label>
+											<!-- <button id="login_lost_btn" type="button" class="custom_btn">Forgot Password?</button> -->
+										</div>
+										<div>
+											<button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+										</div>
+									</form>
+								</div>
+							  </div>
+							</div>
+						 
+						</div> <!-- /form -->
+						
 					</div> 
 			      </div>
 			    </div>
 			  </div>
 		</div>
+		<!-----------------------------------Modal_popup_box_End------------------------------------------->
+		
+		
+		
+		 <style>
+ .header_form_modal .nav-link {
+    display: block;
+    background: #f4bd00;
+    color: #fff;
+    width: 200px;
+    text-align: center;
+    border-radius: 0px !important;
+    padding: 15px 0px;
+    border: transparent !important;
+}
+
+.header_form_modal .form-wrap .nav{
+	justify-content: center;
+}
+ 
+.header_form_modal .form-wrap {
+    display: BLOCK;
+    PADDING: 25PX;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #56509F;
+}
+
+.nav-pills .nav-link{
+    font-size: 18px;
+    font-weight: inherit;
+    line-height: 1em;
+    font-style: normal;
+    color: #56509F;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 576px){
+.header_form_modal .modal-dialog {
+    max-width:500px;
+    margin: 1.75rem auto;
+}
+ </style>
 		<!-----------------------------------Modal_popup_box_End------------------------------------------->

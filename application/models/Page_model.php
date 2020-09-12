@@ -29,6 +29,12 @@ function __construct() {
         }
     }
 
+        public function EmailVerify($users_token,$users_email_verify){
+        $this->db->where('users_token',$users_token);
+        $update = $this->db->update($this->user,array('users_email_verify'=> $users_email_verify));
+        return $update?true:false;
+    }
+
     public function CheckEmail($auth)
     {
         $this->db->select('*');
@@ -45,7 +51,12 @@ function __construct() {
             return false;
         }
     }
-    
+    //Insert User
+    public function InsertUsers($data)
+    {
+         $insert = $this->db->insert($this->user,$data);
+        return $insert?true:false;
+    }
     public function ListBlog($id = '')
     {
         $this->db->select('*');

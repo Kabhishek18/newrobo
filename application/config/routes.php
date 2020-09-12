@@ -12,7 +12,7 @@ $route['contactus'] = 'page/Contact';
 $route['blog'] = 'page/Blog';
 $route['blog/(:num)'] = 'page/BlogDetail';
 $route['gallery'] = 'page/Gallery';
-$route['verify/:any/:any/:any'] = 'home/EmailVerification';
+$route['verify/:any/:any/:any'] = 'student/EmailVerification';
 
 
 

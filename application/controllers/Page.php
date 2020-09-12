@@ -25,7 +25,7 @@ class Page extends CI_Controller {
     }
     
     public function About()
-	{
+	{	
 		$this->load->view('inc/header');
 		$this->load->view('about');
 		$this->load->view('inc/footer');
@@ -94,6 +94,8 @@ class Page extends CI_Controller {
 		if(!empty($catid)){
 			$cat['cat'] = $this->cart_model->Getcat($catid);
 			$cat['catpro'] = $this->cart_model->Getcatpro($catid);
+			$data = $this->session->student_account;
+		
 			$this->load->view('inc/header');
 			$this->load->view('catcourse',$cat);
 			$this->load->view('inc/footer');
@@ -108,6 +110,7 @@ class Page extends CI_Controller {
 		$proid = $this->uri->segment(2,0);
 		if(!empty($proid)){
 		$pro = $this->cart_model->Getproall($proid);	
+		$data = $this->session->student_account;
 		$this->load->view('inc/header');
 		$this->load->view('course',$pro);
 		$this->load->view('inc/footer');
@@ -143,7 +146,10 @@ class Page extends CI_Controller {
 	public function Order()
 	{
 		//Order User ID
-		$data['order_userid'] =1;
+		$ses = $this->session->student_account;
+		if($ses){
+		$data['order_userid'] =$ses['users_id']	;
+		}
 
 		if($data['order_userid']){
 		$order['name'] =$this->input->post('name');

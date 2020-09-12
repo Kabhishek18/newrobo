@@ -1,9 +1,9 @@
 
 	<!-- Our Dashbord -->
-	<section class="our-dashbord dashbord pb50">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="container">
+		<section class="about_us_container p_t_50 p_b_50">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
 					
 						<center>
 							<h1>

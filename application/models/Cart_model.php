@@ -254,5 +254,39 @@ class Cart_model extends CI_Model{
         return !empty($result)?$result:false;
     }
 
+     public function ListOrder($id = '')
+    {
+        $this->db->select('*');
+        $this->db->from($this->order);
+       
+        if($id){
+            $array = array('order_userid' => $id);
+            $this->db->where($array);
+            $this->db->order_by('order_modified','DESC');
+            $query  = $this->db->get();
+            $result = $query->result_array();
+        }
+        
+        // return fetched data
+        return !empty($result)?$result:false;
+    }
+    public function ListCourse($id = '')
+    {
+        $this->db->select('*');
+        $this->db->from($this->product);
+       
+        if($id){
+            $array = array('id' => $id);
+            $this->db->where($array);
+            $query  = $this->db->get();
+            $result = $query->row_array();
+        }else{
+            $query  = $this->db->get();
+            $result = $query->result_array();
+        }
+        
+        // return fetched data
+        return !empty($result)?$result:false;
+    }
 }    
 ?>
