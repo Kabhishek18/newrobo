@@ -1091,7 +1091,6 @@ a:hover {
 }
 
 .grid_right {
-  background-image: url('../img/1.jpg');
   right: -1px;
   position: relative;
   background-size: cover;
