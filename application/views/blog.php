@@ -37,7 +37,7 @@
 										</div>
 										<div class="feature_post_text">
 											<h6>
-												<a href="">
+												<a href="<?=base_url()?>blog/<?=$key['id']?>">
 													<?=$key['blog_title']?>
 												</a>
 											</h6>

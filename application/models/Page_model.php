@@ -141,5 +141,24 @@ function __construct() {
         // return fetched data
         return !empty($result)?$result:false;
     } 
+
+      public function GetproLimit($id,$value){
+        $this->db->select('*');
+        $this->db->from($this->product);
+       
+   
+           $array = array('product_status' => '0');
+            $this->db->where($array);
+            $this->db->limit($id);
+            $this->db->order_by($value, 'DESC');
+            $query  = $this->db->get();
+            $result = $query->result_array();
+    
+        
+        // return fetched data
+        return !empty($result)?$result:false;
+    }
+
+  
 }
 ?>

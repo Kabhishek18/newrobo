@@ -288,11 +288,13 @@
 					<div class="class_grid_box ">
 						<div class="class_grid_inner">
 							<div class="row">
+								<?php $pros = $this->page_model->GetproLimit(4,'modified')?>
+								<?php foreach($pros as $pro){?>
 								<div class="col-md-6">
 									<div class="class_col_box">
 										<div class="grid_left purple_color">
-											<h5>Maecenas</h5>
-											<span class="c_name gray_color">Class name</span>
+											<h5><?=$pro['product_name']?></h5>
+											<span class="c_name gray_color"><?=$pro['product_slug']?></span>
 											<div class="class_density">
 												<div class="month_old">
 													<span class="white_color">12-24</span>
@@ -305,87 +307,16 @@
 											</div>
 										</div>
 									
-										<div class="grid_right gridbg1">
-											<a href="#" class="click_here">
+										<div class="grid_right" style="background-image:url(<?=base_url()?>uploads/<?=$pro['product_image']?>) !important ">
+											<a href="<?=base_url()?>course/<?=$pro['id']?>" class="click_here">
 											 click here
 											</a>
 										</div>
 									</div>
 								</div>
-								
-								<div class="col-md-6">
-									<div class="class_col_box">
-										<div class="grid_left purple_color">
-											<h5>Maecenas</h5>
-											<span class="c_name gray_color">Class name</span>
-											<div class="class_density">
-												<div class="month_old">
-													<span class="white_color">12-24</span>
-													<span class="gray_color">Month olds</span>
-												</div>
-												<div class="size">
-													<span class="white_color">9</span>
-													<span class="gray_color">Class size</span>
-												</div>
-											</div>
-										</div>
-									
-										<div class="grid_right gridbg2">
-											<a href="#" class="click_here">
-											 click here
-											</a>
-										</div>
-									</div>
-								</div>
-								
-								<div class="col-md-6">
-									<div class="class_col_box">
-										<div class="grid_left purple_color">
-											<h5>Maecenas</h5>
-											<span class="c_name gray_color">Class name</span>
-											<div class="class_density">
-												<div class="month_old">
-													<span class="white_color">12-24</span>
-													<span class="gray_color">Month olds</span>
-												</div>
-												<div class="size">
-													<span class="white_color">9</span>
-													<span class="gray_color">Class size</span>
-												</div>
-											</div>
-										</div>
-									
-										<div class="grid_right gridbg3">
-											<a href="#" class="click_here">
-											 click here
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="class_col_box">
-										<div class="grid_left purple_color">
-											<h5>Maecenas</h5>
-											<span class="c_name gray_color">Class name</span>
-											<div class="class_density">
-												<div class="month_old">
-													<span class="white_color">12-24</span>
-													<span class="gray_color">Month olds</span>
-												</div>
-												<div class="size">
-													<span class="white_color">9</span>
-													<span class="gray_color">Class size</span>
-												</div>
-											</div>
-										</div>
-									
-										<div class="grid_right gridbg4">
-											<a href="#" class="click_here">
-											 click here
-											</a>
-										</div>
-									</div>
-								</div>
+								<?php }?>
+
+
 							</div>
 						</div>
 					</div>
@@ -486,96 +417,43 @@
 				</div>
 				<div class="blog_container p_t_50 p_b_50">
 					<div class="row">
+					<?php $recent =$this->page_model->ListBlogLimit(3,'created');
+									foreach ($recent as $key ) {?>
+										
+
 						<div class="col-md-4">
 							<div class="blog_box">
 								<div class="post_date">
-									October 03, 2014
+									<?=date('F,d Y',strtotime($key['created']))?>
 								</div>
 								
 								<div class="post_img">
-									<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>
+									<a href="<?=base_url()?>blog/<?=$key['id']?>"><img src="<?=base_url()?>uploads/blog/<?=$key['blog_image']?>" alt=""></a>
 									<span class="post_no">12</span>
 								</div>
 								
 								<div class="post_title">
-									<h2>What is the correct age of kids for learning coding in the 21st century?</h2>
+									<h2><?=$key['blog_title']?></h2>
 								</div>
 								
 								<div class="post_text">
-									Parents are always in a dilemma of what to invest in for their kids. They want to choose something that could excite the kids and at the same time, it helps them to learn and grow.To solve this dilemma, you can offer the best to your child by enrolling them in coding courses.
+										<?=$key['excerpt']?>
 								</div>
 								
 								<div class="filter_box">
 									<ul>
-										<li class="author"><a href="">Anna Brown</a></li>
-										<li class="category"><a href="">Events, Fun</a></li>
+										<li class="author"><a href=""><?=$key['blog_author']?></a></li>
+										<li class="category"><a href=""><?=$key['blurb_1']?>, <?=$key['blurb_2']?></a></li>
 									</ul>
 								</div>
 							</div>
 						</div>
 						
-						
-						
-						<div class="col-md-4">
-							<div class="blog_box">
-								<div class="post_date">
-									October 03, 2014
-								</div>
-								
-								<div class="post_img">
-									<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>
-									<span class="post_no">12</span>
-								</div>
-								
-								<div class="post_title">
-									<h2>Learn to Code: Artificial Intelligence in Education</h2>
-								</div>
-								
-								<div class="post_text">
-									Welcome to the 21st centurydigital era where technology rules our daily lives. We can see technology all around us and this is what the generation is growing up with. It is pretty normal to see how they comfortably browse shopping websites and understand virtual assistants. 
-								</div>
-								
-								<div class="filter_box">
-									<ul>
-										<li class="author"><a href="">Anna Brown</a></li>
-										<li class="category"><a href="">Events, Fun</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						
-						
-						<div class="col-md-4">
-							<div class="blog_box">
-								<div class="post_date">
-									October 03, 2014
-								</div>
-								
-								<div class="post_img">
-									<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>
-									<span class="post_no">12</span>
-								</div>
-								
-								<div class="post_title">
-									<h2>How STEM Education is fruitful for students?</h2>
-								</div>
-								
-								<div class="post_text">
-									Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum.
-								</div>
-								
-								<div class="filter_box">
-									<ul>
-										<li class="author"><a href="">Anna Brown</a></li>
-										<li class="category"><a href="">Events, Fun</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
+					<?php }?>
 					</div>
 					
 					<div class="more_blog">
-						<a href="blog.html"> go to blog</a>
+						<a href="<?=base_url()?>blog"> go to blog</a>
 					</div>
 				</div>
 			</div>
