@@ -3,7 +3,7 @@
 			<div class="container">
 				<div class="breadcrumb_text">
 					<h1>Blog Details</h1>
-					<h6>BROWSE NEWS FROM OUR KINDERGARTEN</h6>							
+			 							
 				</div>
 			</div>
 		</section>

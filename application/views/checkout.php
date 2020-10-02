@@ -25,7 +25,7 @@
         </li>
 
         <li class="list-group-item d-flex justify-content-between">
-          <span>Total (USD)</span>
+          <span>Total (₹)</span>
           <strong> <?php  
           if($_SESSION['checkout']['selection'] == 1){?>
             ₹ <?=$_SESSION['checkout']['pro']['novice_price']?>

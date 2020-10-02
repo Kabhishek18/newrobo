@@ -57,6 +57,23 @@
 			</div>
 		</section>
 		<!---------------------course_detail_wrapper_End-------------------------------------------------->
+		<!-------------------------course_detail_content_box_START-------------------------------------------------->
+		<section id="course_detail_content_box" class="p_t_50 p_b_50">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						 
+						<div class="course_detail_content_box_inner">
+							 
+							<?=$product_description?>
+
+ 
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-------------------------course_detail_content_box_End-------------------------------------------------->
  
 		<!---------------------------external_section_start------------------------------------------------------------>
 			<section id="external_section" class="p_t_50 ">
@@ -68,7 +85,7 @@
 								<div class="pricedetail">
 									<?=$product_novice?>
 								</div>
-								<button class=" btn button-custom animated" data-toggle="modal" data-target="#book_now">Book Now</button>
+								<button class=" btn button-custom animated" data-toggle="modal" data-target="#selectprice">Book Now</button>
 							</div>
 						</div>
 						
@@ -79,7 +96,7 @@
 								<div class="pricedetail">
 									<?=$product_developer?>
 								</div>
-								<button class=" btn button-custom animated" data-toggle="modal" data-target="#book_now">Book Now</button>
+								<button class=" btn button-custom animated" data-toggle="modal" data-target="#selectprice">Book Now</button>
 							</div>
 						</div>
  
@@ -90,7 +107,7 @@
 								<div class="pricedetail">
 									<?=$product_champion?>
 								</div>
-								<button class=" btn button-custom animated" data-toggle="modal" data-target="#book_now">Book Now</button>
+								<button class=" btn button-custom animated" data-toggle="modal" data-target="#selectprice">Book Now</button>
 							</div>
 						</div>
 					</div>
@@ -111,6 +128,8 @@
 				  <div class="modal-body">
 				  <h3>Select Your Curriculum Type </h3>
 				  <hr>
+				   <div class="container">
+				       <div class ="row">
 					<form method="post" action="<?=base_url()?>checkout">
 						<input type="hidden" name="id" value="<?=$id?>">
 					
@@ -140,6 +159,8 @@
 						<button type="submit" class="btn btn-primary">Proceed To Checkout</button>
 					  </div>	
 					</form>
+					    </div>
+					</div>
 				  </div>
 				
 				</div>
@@ -182,21 +203,4 @@
 			</div>
 		<!------------------------------------------BOOK_NOW_FORM_END------------------------------------------------>
 
-		<!-------------------------course_detail_content_box_START-------------------------------------------------->
-		<section id="course_detail_content_box" class="p_t_50 p_b_50">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						 
-						<div class="course_detail_content_box_inner">
-							 
-							<?=$product_description?>
-
- 
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-------------------------course_detail_content_box_End-------------------------------------------------->
 

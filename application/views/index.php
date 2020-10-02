@@ -13,7 +13,7 @@
 							</p>
 							<h2 class="animated title12" data-animation-in="fadeInUp">Animation and Game Design</h2>
 							<h3 class="animated title12 title_3" data-animation-in="fadeInUp">For your children</h3>
-							<a class=" btn button-custom animated text-white" href="Little_Champs.html">Explore more</a>
+							<a class=" btn button-custom animated text-white" href="https://newrobos.com/course/1">Explore more</a>
 						</div>
 					</div>
 				</div>
@@ -27,7 +27,7 @@
 							<p class="animated top-title" data-animation-in="fadeInUp" data-delay-in="0.3">Welcome to NEW ROBOS</p>
 							<h2 class="animated title12" data-animation-in="fadeInUp" >Python Senior</h2>
 							<h3 class="animated title12 title_3" data-animation-in="fadeInUp">Unlock new possibilities</h3>
-							<a class=" btn button-custom animated text-white" href="Little_Champs.html">Explore more</a>
+							<a class=" btn button-custom animated text-white" href="https://newrobos.com/course/8">Explore more</a>
 						</div>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
 							<p class="animated top-title" data-animation-in="fadeInRight" data-delay-in="0.2">Welcome to NEW ROBOS</p>
 							<h2 class="animated title12" data-animation-in="fadeInRight">Artificial Intelligence</h2>
 							<h3 class="animated title12 title_3" data-animation-in="fadeInUp">Explore the power of technology</h3>
-							<a class=" btn button-custom animated text-white" href="Little_Champs.html">Explore more</a>
+							<a class=" btn button-custom animated text-white" href="https://newrobos.com/course/12">Explore more</a>
 						</div>
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 							<p class="animated top-title" data-animation-in="fadeInRight" data-delay-in="0.2">Welcome to NEW ROBOS</p>
 							<h2 class="animated title12" data-animation-in="fadeInRight">Arduino with Tinkercad</h2>
 							<h3 class="animated title12 title_3" data-animation-in="fadeInUp">Become the creators of technology</h3>
-							<a class=" btn button-custom animated text-white" href="Little_Champs.html">Explore more</a>
+							<a class=" btn button-custom animated text-white" href="https://newrobos.com/course/9">Explore more</a>
 						</div>
 					</div>
 				</div>
@@ -70,7 +70,7 @@
 							<p class="animated top-title" data-animation-in="fadeInRight" data-delay-in="0.2">Welcome to NEW ROBOS</p>
 							<h2 class="animated title12" data-animation-in="fadeInRight">App Development</h2>
 							<h3 class="animated title12 title_3" data-animation-in="fadeInUp">Become a part of the future of technology</h3>
-							<a class=" btn button-custom animated text-white" href="Little_Champs.html">Explore more</a>
+							<a class=" btn button-custom animated text-white" href="https://newrobos.com/course/11">Explore more</a>
 						</div>
 					</div>
 				</div>
@@ -170,8 +170,8 @@
 											</div>
 										</div>
 										<div class="overview_column_text">
-											<h5>60 Minutes Sessions</h5>
-											<p>The duration of our live classes will be of 60 minutes each. It will start with 10 minutes of warm-up moving to 45 minutes of curriculum teaching and ending with 10 minutes of wrap-up.</p>
+											<h5>Coding for Kids</h5>
+											<p>We have developed programming courses that allow kids, teenagers, and young adults to learn how to code with live online coding classes and in an environment that works for them.</p>
 										</div>
 									</div>
 									<div class="overview_holder">
@@ -180,8 +180,8 @@
 											</div>
 										</div>
 										<div class="overview_column_text">
-											<h5>Duration of Courses</h5>
-											<p>Each course will take 10-12 hours to complete.</p>
+											<h5>Excellent program</h5>
+											<p>programs designed to stimulate creativity, problem-solving skills, and academic performance overall.</p>
 										</div>
 									</div>
 								</div>
@@ -275,11 +275,11 @@
 				<div class="sub_classes">
 					<div class="row">
 						<div class="col-md-6">
-							<h4>Our instructors try to make learning interesting and engrossing so that the young learners are empowered to excel in the technological field </h4>
+							<h4 class="instructors">Our instructors try to make learning interesting and engrossing so that the young learners are empowered to excel in the technological field </h4>
 						</div>
 						
 						<div class="col-md-6">
-							<p>We ensure a two-way interaction between the students and the teachers. We have a provision of recorded sessions that help the students to access the old sessions later.</p>
+							<p class="instructors">We ensure a two-way interaction between the students and the teachers. We have a provision of recorded sessions that help the students to access the old sessions later.</p>
 						</div>
 					</div>
 				</div>
@@ -296,14 +296,7 @@
 											<h5><?=$pro['product_name']?></h5>
 											<span class="c_name gray_color"><?=$pro['product_slug']?></span>
 											<div class="class_density">
-												<div class="month_old">
-													<span class="white_color">12-24</span>
-													<span class="gray_color">Month olds</span>
-												</div>
-												<div class="size">
-													<span class="white_color">9</span>
-													<span class="gray_color">Class size</span>
-												</div>
+												
 											</div>
 										</div>
 									
@@ -360,7 +353,7 @@
 							<h3>See Our Photo Gallery!</h3>
 						</div>
 						<div class="enroll_btn_box">
-							<a href="gallery.html">View Gallery  <i class="fa fa-angle-right rightarrow" aria-hidden="true"></i></a>
+							<a href="gallery">View Gallery  <i class="fa fa-angle-right rightarrow" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				
@@ -429,7 +422,7 @@
 								
 								<div class="post_img">
 									<a href="<?=base_url()?>blog/<?=$key['id']?>"><img src="<?=base_url()?>uploads/blog/<?=$key['blog_image']?>" alt=""></a>
-									<span class="post_no">12</span>
+									<!--<span class="post_no">12</span> -->
 								</div>
 								
 								<div class="post_title">
@@ -518,7 +511,7 @@
 								<li>
 									<div class="client-inners">
 										<div class="client-inners-img">
-											<img src="<?=base_url()?>assets/img/clientlogo1.png" alt="images"> 
+											<img src="<?=base_url()?>assets/img/client/1.jpg" alt="images"> 
 										</div>
 									</div>
 								</li>
@@ -526,16 +519,7 @@
 								<li>
 									<div class="client-inners">
 										<div class="client-inners-img">
-											<img src="<?=base_url()?>assets/img/clientlogo1.png" alt="images"> 
-										</div>
-									</div>
-								</li>
-
-
-								<li>
-									<div class="client-inners">
-										<div class="client-inners-img">
-											<img src="<?=base_url()?>assets/img/clientlogo1.png" alt="images"> 
+											<img src="<?=base_url()?>assets/img/client/2.jpg" alt="images"> 
 										</div>
 									</div>
 								</li>
@@ -544,17 +528,16 @@
 								<li>
 									<div class="client-inners">
 										<div class="client-inners-img">
-											<img src="<?=base_url()?>assets/img/clientlogo1.png" alt="images"> 
+											<img src="<?=base_url()?>assets/img/client/3.png" alt="images"> 
 										</div>
 									</div>
 								</li>
 
 
-
 								<li>
 									<div class="client-inners">
 										<div class="client-inners-img">
-											<img src="<?=base_url()?>assets/img/clientlogo1.png" alt="images"> 
+											<img src="<?=base_url()?>assets/img/client/4.png" alt="images"> 
 										</div>
 									</div>
 								</li>
@@ -564,44 +547,42 @@
 								<li>
 									<div class="client-inners">
 										<div class="client-inners-img">
-											<img src="<?=base_url()?>assets/img/clientlogo1.png" alt="images"> 
+											<img src="<?=base_url()?>assets/img/client/5.png" alt="images"> 
 										</div>
 									</div>
 								</li>
 
 
-								<li>
-									<div class="client-inners">
-										<div class="client-inners-img">
-											<img src="<?=base_url()?>assets/img/clientlogo1.png" alt="images"> 
-										</div>
-									</div>
-								</li>
 
+							 
 
-								<li>
-									<div class="client-inners">
-										<div class="client-inners-img">
-											<img src="<?=base_url()?>assets/img/clientlogo1.png" alt="images"> 
-										</div>
-									</div>
-								</li>
+									<style>
+	.client_holder {
+	display: flex;
 
-								<li>
-									<div class="client-inners">
-										<div class="client-inners-img">
-											<img src="<?=base_url()?>assets/img/clientlogo1.png" alt="images"> 
-										</div>
-									</div>
-								</li>
+	justify-content: space-between;
+	flex-wrap: wrap;
+	}
+	.client-inners-img {
+	/* background: #f4bd00ad; */
+	width: 200px !important;
+	height: 200px !important;
+	border: 1px solid #eaeaea;
+	max-height: fit-content !important;
+	text-align: center;
+	border-radius: 3px;
+	}
+	.client-inners-img img {
 
-								<li>
-									<div class="client-inners">
-										<div class="client-inners-img">
-											<img src="<?=base_url()?>assets/img/clientlogo1.png" alt="images"> 
-										</div>
-									</div>
-								</li>
+	padding: 4px;
+
+	}
+	.client-inners-img {
+	background: #ffffff;}
+			</style>	 
+ 
+ 
+ 
 								 
 							 
 							</ul>

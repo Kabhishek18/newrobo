@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?=base_url()?>assets/css/style.css">
+	<!-- <link rel="stylesheet" href="<?=base_url()?>assets/css/style.css"> -->
+	<link rel="icon" type="image/png" href="<?=base_url()?>assets/img/favicon/favicon.png" sizes="16x16">
+	<link rel="stylesheet" href="<?=base_url()?>assets/css/sachin.css">
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/responsive.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet"> 
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet">  -->
+	<!--<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/slick/slick-theme.css">
 	<link rel="stylesheet" href="<?=base_url()?>assets/dist/simple-lightbox.css" />
@@ -63,7 +65,7 @@
                             </div>
                              <div class="top-strip_box strip2">
                                 <div class="call_us">
-                                  <span class="icon_m"><i class="fa fa-history" aria-hidden="true"></i></span><span>Service Hours: 09:00 am - 6:00 pm </span>
+                                  <span class="icon_m"><i class="fa fa-history" aria-hidden="true"></i></span><span>Service Hours: 10:00 am - 07:00 pm </span>
                                </div>
                             </div>
 
@@ -98,7 +100,7 @@
 		    <div class="container">
 		        <div class="row">
 		            <nav class="navbar navbar-light navbar-expand-lg mainmenu">
-		            	<a class="navbar-brand logo" href="<?=base_url()?>"><img src="<?=base_url()?>assets/img/logo.jpg"></a>
+		            	<a class="navbar-brand logo" href="<?=base_url()?>"><img src="<?=base_url()?>assets/img/blacklogo.jpg"></a>
 		                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		                <span class="navbar-toggler-icon"></span>
 		                </button>
@@ -142,7 +144,7 @@
 	                     		<a class="li_item_a" style="color: red!important" href="<?=base_url()?>student/Logout">Logout</a></li>	
 		                        <?php }
 		                        else{?>
-		                        <li class="nav-item li_item "><a class="nav-link li_item_a" href="#" data-toggle="modal" data-target="#exampleModalCenter"><span class="icon_position icon_size icon_login"></span>Login / Signups</a></li>
+		                        <li class="nav-item li_item "><a class="nav-link li_item_a" href="#" data-toggle="modal" data-target="#exampleModalCenter"><span class="icon_position icon_size icon_login"></span>Login / Signup</a></li>
 		                    	<?php }?>
 		                    </ul>
 		                </div>
@@ -212,7 +214,7 @@
 											<h3>Login to your account</h3>
 										</div>
 										<div class="form-group">
-											<input id="login_username" class="form-control" type="text" name="users_email" placeholder="Username" required="">
+											<input id="login_username" class="form-control" type="text" name="users_email" placeholder="Email Id" required="">
 										</div>
 										<div class="form-group">
 											<input id="login_password" class="form-control" type="password" name="users_password" placeholder="Password" required="">

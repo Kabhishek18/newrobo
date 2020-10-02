@@ -89,7 +89,9 @@ class Student extends CI_Controller {
 		
 		$auth['users_name']=$this->input->post("username");	
 		$auth['users_email']=$this->input->post("email");
-		$auth['users_password']=md5($this->input->post("password"));	
+		$auth['users_password']=md5($this->input->post("password"));
+		$password = $this->input->post("password");
+	
 		$auths['cpassword']=md5($this->input->post("cpassword"));
 		$emailcheck =$this->page_model->CheckEmail($auth);
 		if ($emailcheck==true ) {
@@ -101,7 +103,7 @@ class Student extends CI_Controller {
 		$auth['users_token']=generateUUID();	
 		$auth['users_account']=1;
 
-		$messagebomb = '<h1> Thanks For Registration with new robo,<h1><p>Click to verify <a href="'.base_url().'verify/'.$auth['users_token'].'/'.$auth['users_name'].'/'.generateUUID().'" >Link</a></p>';
+		$messagebomb = '<h1> Thanks For Registration with new robo,<h1><h5>Username :'.$auth['users_name'].'</h5><h5>Password :'.$password.' </h5><p>Click to verify <a href="'.base_url().'verify/'.$auth['users_token'].'/'.$auth['users_name'].'/'.generateUUID().'" >Link</a></p>';
 
 		$check=$this->input->post("check");	
 		if ($auths['cpassword'] == $auth['users_password']) {

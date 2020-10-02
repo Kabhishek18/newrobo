@@ -130,10 +130,10 @@
 				<div class="enroll_section_inner">
 					<div class="enroll_box">
 						<div class="enroll_text">
-							<h3><span>How to</span> Enroll Your Child to a Class?</h3>
+							<h3><span>Book a free</span> Demo For Your Child</h3>
 						</div>
 						<div class="enroll_btn_box">
-							<a href="">LEARN MORE  <i class="fa fa-angle-right rightarrow" aria-hidden="true"></i></a>
+							<a href="https://newrobos.com/course/1">Book now  <i class="fa fa-angle-right rightarrow" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				

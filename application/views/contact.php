@@ -68,9 +68,9 @@
                              <div class="feature_text">
                                  <h5>Business Hours</h5>
                                  <p>
-                                 Monday – Friday<br>
-                                 8.00 am – 5.00 pm<br>
-                                 Weekend Closed								
+                                 Monday – Saturday<br>
+                                 10:00 am – 7:00 pm<br>
+                           							
                                  </p>
                              </div>
                          </div>
@@ -83,15 +83,15 @@
                          <div class="form-row">
                              <div class=" col-md-6 form_left">
                                  <div class="form-group">
-                                     <input type="text" name="name" class="form-control" id="inputEmail4" placeholder="Your Name *">
+                                     <input type="text" name="name" class="form-control" id="inputEmail4" placeholder="Name *">
                                  </div>
  
                                  <div class="form-group">
-                                     <input type="email" name ="email" class="form-control" id="inputPassword4" placeholder="Your E-mail *">
+                                     <input type="email" name ="email" class="form-control" id="inputPassword4" placeholder="mail *">
                                  </div>
  
                                  <div class="form-group">
-                                     <input type="number" name="phone" class="form-control" id="inputEmail4" placeholder="Phone number*">
+                                     <input type="number" name="phone" class="form-control" id="inputEmail4" placeholder="number*">
                                  </div>     
                              </div>
  

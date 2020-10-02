@@ -16,7 +16,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="about_right_inner">
+						<!-- <div class="about_right_inner">
 							<div class="about_img">
 								<div class="image_holder ">
 									<img src="<?=base_url()?>assets/img/4.jpg" alt="images" class="<?=base_url()?>assets/img-fuild">
@@ -26,9 +26,13 @@
 									<span>Tenderhearts Class</span>
 								</div>
 							</div>
-						</div>
+						</div> -->
+<style>
+.about_us_container .component-divider {
+margin-left: auto !important;
+}</style>
 						<div class="about_left_inner text_center12	">
-							<h3>Dedicated courses for<br> <strong>the technology-driven era.</strong></h3>
+							<h3 style="text-align:center;">Dedicated courses for<br> <strong>the technology-driven era.</strong></h3>
 							<div class="component-divider"></div>
 							<div class="component-italic">
 									Learn from the best and experienced instructors from the comfort of home. Technology will be a game changer in your life!
@@ -147,11 +151,39 @@
 				<div class="counter_slider">
 			 		<div class="counter_inner">
 			 			<div class="counter_box">
+			 				logo
+			 			</div>
+			 			<h5>IIT</h5>
+			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
+			 		</div>
+
+			 		<div class="counter_inner">
+			 			<div class="counter_box">
+			 				logo
+			 			</div>
+			 			<h5>NIT</h5>
+			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
+			 		</div>
+
+
+			 		<div class="counter_inner">
+			 			<div class="counter_box">
+			 				logo
+			 			</div>
+			 			<h5>IIM</h5>
+			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
+			 		</div>
+
+
+			 	<!--	<div class="counter_inner">
+			 			<div class="counter_box">
 			 				123
 			 			</div>
 			 			<h5>Full Daycare</h5>
 			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
 			 		</div>
+
+
 
 			 		<div class="counter_inner">
 			 			<div class="counter_box">
@@ -168,143 +200,115 @@
 			 			</div>
 			 			<h5>Full Daycare</h5>
 			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
-			 		</div>
-
-
-			 		<div class="counter_inner">
-			 			<div class="counter_box">
-			 				123
-			 			</div>
-			 			<h5>Full Daycare</h5>
-			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
-			 		</div>
-
-
-
-			 		<div class="counter_inner">
-			 			<div class="counter_box">
-			 				123
-			 			</div>
-			 			<h5>Full Daycare</h5>
-			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
-			 		</div>
-
-
-			 		<div class="counter_inner">
-			 			<div class="counter_box">
-			 				123
-			 			</div>
-			 			<h5>Full Daycare</h5>
-			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
-			 		</div>
+			 		</div> -->
 				</div>
 			</div>
 		</section>
 		<!---------------------------------------------------counter_wrapper_End------------------------------>
 
 		<!---------------------------------------------------blog_Start------------------------------>
-		<section id="blog" class="p_t_50 p_b_50 bottom_box_shadow">
-			<div class="container">
-				<div class="title">
-					<h2>What's New</h2>
-					<h6>Keep up to date with the latest news</h6>
-					<div></div>
-				</div>
-				<div class="blog_container welcome_layout">
-					<div class="row">
-						<div class="col-md-4">
-							<div class="blog_box">
-								<div class="post_date">
-									October 03, 2014
-								</div>
+		<!--<section id="blog" class="p_t_50 p_b_50 bottom_box_shadow">-->
+		<!--	<div class="container">-->
+		<!--		<div class="title">-->
+		<!--			<h2>What's New</h2>-->
+		<!--			<h6>Keep up to date with the latest news</h6>-->
+		<!--			<div></div>-->
+		<!--		</div>-->
+		<!--		<div class="blog_container welcome_layout">-->
+		<!--			<div class="row">-->
+		<!--				<div class="col-md-4">-->
+		<!--					<div class="blog_box">-->
+		<!--						<div class="post_date">-->
+		<!--							October 03, 2014-->
+		<!--						</div>-->
 								
-								<div class="post_img">
-									<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>
-									<span class="post_no">12</span>
-								</div>
+		<!--						<div class="post_img">-->
+		<!--							<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>-->
+		<!--							<span class="post_no">12</span>-->
+		<!--						</div>-->
 								
-								<div class="post_title">
-									<h2>Drawing and Painting Lessons</h2>
-								</div>
+		<!--						<div class="post_title">-->
+		<!--							<h2>Drawing and Painting Lessons</h2>-->
+		<!--						</div>-->
 								
-								<div class="post_text">
-									Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum.
-								</div>
+		<!--						<div class="post_text">-->
+		<!--							Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum.-->
+		<!--						</div>-->
 								
-								<div class="filter_box">
-									<ul>
-										<li class="author"><a href="">Anna Brown</a></li>
-										<li class="category"><a href="">Events, Fun</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
+		<!--						<div class="filter_box">-->
+		<!--							<ul>-->
+		<!--								<li class="author"><a href="">Anna Brown</a></li>-->
+		<!--								<li class="category"><a href="">Events, Fun</a></li>-->
+		<!--							</ul>-->
+		<!--						</div>-->
+		<!--					</div>-->
+		<!--				</div>-->
 						
 						
 						
-						<div class="col-md-4">
-							<div class="blog_box">
-								<div class="post_date">
-									October 03, 2014
-								</div>
+		<!--				<div class="col-md-4">-->
+		<!--					<div class="blog_box">-->
+		<!--						<div class="post_date">-->
+		<!--							October 03, 2014-->
+		<!--						</div>-->
 								
-								<div class="post_img">
-									<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>
-									<span class="post_no">12</span>
-								</div>
+		<!--						<div class="post_img">-->
+		<!--							<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>-->
+		<!--							<span class="post_no">12</span>-->
+		<!--						</div>-->
 								
-								<div class="post_title">
-									<h2>Drawing and Painting Lessons</h2>
-								</div>
+		<!--						<div class="post_title">-->
+		<!--							<h2>Drawing and Painting Lessons</h2>-->
+		<!--						</div>-->
 								
-								<div class="post_text">
-									Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum.
-								</div>
+		<!--						<div class="post_text">-->
+		<!--							Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum.-->
+		<!--						</div>-->
 								
-								<div class="filter_box">
-									<ul>
-										<li class="author"><a href="">Anna Brown</a></li>
-										<li class="category"><a href="">Events, Fun</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
+		<!--						<div class="filter_box">-->
+		<!--							<ul>-->
+		<!--								<li class="author"><a href="">Anna Brown</a></li>-->
+		<!--								<li class="category"><a href="">Events, Fun</a></li>-->
+		<!--							</ul>-->
+		<!--						</div>-->
+		<!--					</div>-->
+		<!--				</div>-->
 						
 						
-						<div class="col-md-4">
-							<div class="blog_box">
-								<div class="post_date">
-									October 03, 2014
-								</div>
+		<!--				<div class="col-md-4">-->
+		<!--					<div class="blog_box">-->
+		<!--						<div class="post_date">-->
+		<!--							October 03, 2014-->
+		<!--						</div>-->
 								
-								<div class="post_img">
-									<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>
-									<span class="post_no">12</span>
-								</div>
+		<!--						<div class="post_img">-->
+		<!--							<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>-->
+		<!--							<span class="post_no">12</span>-->
+		<!--						</div>-->
 								
-								<div class="post_title">
-									<h2>Drawing and Painting Lessons</h2>
-								</div>
+		<!--						<div class="post_title">-->
+		<!--							<h2>Drawing and Painting Lessons</h2>-->
+		<!--						</div>-->
 								
-								<div class="post_text">
-									Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum.
-								</div>
+		<!--						<div class="post_text">-->
+		<!--							Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum.-->
+		<!--						</div>-->
 								
-								<div class="filter_box">
-									<ul>
-										<li class="author"><a href="">Anna Brown</a></li>
-										<li class="category"><a href="">Events, Fun</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
+		<!--						<div class="filter_box">-->
+		<!--							<ul>-->
+		<!--								<li class="author"><a href="">Anna Brown</a></li>-->
+		<!--								<li class="category"><a href="">Events, Fun</a></li>-->
+		<!--							</ul>-->
+		<!--						</div>-->
+		<!--					</div>-->
+		<!--				</div>-->
+		<!--			</div>-->
 					
-					<div class="more_blog">
-						<a href=""> go to blog</a>
-					</div>
-				</div>
+		<!--			<div class="more_blog">-->
+		<!--				<a href=""> go to blog</a>-->
+		<!--			</div>-->
+		<!--		</div>-->
 				
-			</div>
-		</section>
+		<!--	</div>-->
+		<!--</section>-->
 		<!---------------------------------------------------blog_End------------------------------>

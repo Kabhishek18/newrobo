@@ -7,13 +7,32 @@
 							<div class="col_inner">
 								<h6 class="f_head"><span class="footer_heading">About Us</span><span class="footer_line"></span></h6>
 								<div class="col_inner_box">
-									<p class="footer_sub_heading">Elipsis magna a nulla elite forte maecenas est elementum magna etos interdum movum morbi vehicula morbi.</p>
+									<p class="footer_sub_heading">
+									NewRobos is an online coding academy for kids that helps them with a platform where they can learn to exhibit their creative side which otherwise remains hidden.<a href="https://newrobos.com/aboutus" class="readmoreaboutus">Read More</a>
+									</p>
+									
 									<div class="footer_logo">
-										<a href="index.html"><img src="<?=base_url()?>assets/img/White_log.png" alt=""></a>
+										<a href="https://newrobos.com/"><img src="<?=base_url()?>assets/img/whitelogo.png" alt=""></a>
 									</div>
 								</div>
 							</div>
 						</div>
+						<style>
+.footer_logo img {
+width: 90%;
+opacity: .8;
+}
+#selectprice  .modal-body{
+	padding: 19px !important;
+}
+.post_title h2 {
+    min-height: 85px;
+}
+.class_col_box {
+    
+    min-height: 200px;
+}
+						</style>
 						<div class="col-md-3">
 							<div class="col_inner">
 								<h6 class="f_head"><span class="footer_heading">Courses</span><span class="footer_line"></span></h6>
@@ -22,11 +41,11 @@
 										<?php $plists = $this->cart_model->Getcat();
 											foreach($plists as $list){?>	
 			                            <li >
-			                                <a href="<?=base_url()?>courses/<?=$list['id']?>/<?=$list['cat_name']?>"><b><?=$list['cat_name']?></b></a>
+			                                <a href="<?=base_url()?>courses/<?=$list['id']?>/<?=$list['cat_name']?>"><?=$list['cat_name']?></a>
 			                            </li>
 									<?php }?>		
 									 
-										<li><a href="<?=base_url()?>gallery">Gallery</a></li>
+									
 						
 									 
 									</ul>
@@ -38,14 +57,19 @@
 							<div class="col_inner">
 								<h6 class="f_head"><span class="footer_heading">Important pages</span><span class="footer_line"></span></h6>
 								<div class="col_inner_box">
+									 
 									<ul>
-										<li><a href="aboutus.html">About</a></li>
-										<li><a href="privacy_policy.html">Privacy Policy</a></li>
-										<li><a href="">Refund Policy</a></li>
-										<li><a href="faq.html">FAQ's</a></li>
-										<li><a href="blog.html">Blogs</a></li>
-										<li><a href="contactus.html">Contact Us</a></li>
+										<li><a href="aboutus">About</a></li>
+										<li><a href="<?=base_url()?>gallery">Gallery</a></li>
+										<li><a href="privacy_policy">Privacy Policy</a></li>
+										<li><a href="faq">FAQ's</a></li>
+										<li><a href="tc">Terms & Conditions</a></li>
+										<li><a href="blog">Blogs</a></li>
+										<li><a href="contactus">Contact Us</a></li>
 									</ul>
+									
+									
+									
 								</div>
 							</div>
 						</div>
@@ -83,6 +107,12 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
+
+							<div class="copyright">
+								<div class="copy_left">
+									copyright ©&nbsp; 2020, NewRobos. All Rights Reserved.
+								</div>
+								
 							<div class="social_box">
 								<ul>
 									<li><a href="https://www.facebook.com/newrobos/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -94,23 +124,81 @@
 									<li><a href="https://twitter.com/New_Robos"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 
 								</ul>
-								
-								
-							 
-								
-								
-								
-								
-							
-								
 							</div>
-							<div class="copyright">
-								<div class="copy_left">
-									copyright ©&nbsp; 2020, NewRobos. All Rights Reserved.
+						 
+								
+								<div class="footer-text">
+									Made with
+									<div class="heart"></div>
+									in India.
 								</div>
-								<div class="copy_right">
-									<a href="http://www.neomatechnologies.com/">Powered by Neoma Technologies</a>
-								</div>
+								
+<style>
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(86 80 159) !important;
+    align-items: center;
+}
+.footer-text {
+display: flex;
+align-items: center;
+margin-bottom: 0;
+ color: #5a7184;
+letter-spacing: .2px;
+text-align: justify;
+ 
+}
+.footer-text .heart {
+    position: relative;
+    width: .5rem;
+    height: .5rem;
+    background-color: f4bd00;
+    transform: rotate(45deg);
+    -webkit-animation: e 1.2s linear infinite;
+    animation: e 1.2s linear infinite;
+    margin: .6rem;
+}
+.footer-text .heart:after, .footer-text .heart:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4bd00;
+    border-radius: 50%;
+}
+.footer-text .heart:before {
+    transform: translateY(-50%);
+}
+.footer-text .heart:after {
+    transform: translateX(-50%);
+}
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(86 80 159) !important;
+    align-items: center;
+}
+.purple_color {
+    background-color: #56509F;
+    min-height: auto !important;
+}
+.testimonial P {
+    font-size: 25px;
+    line-height: 1.8em;
+    color: #ffffff;
+    /* font-family: lato; */
+    font-weight: 300;
+    width: 75%;
+    margin: auto;
+}
+body{
+	    font-family: 'Open Sans', sans-serif !important;
+}
+</style>
+								
 							</div>
 						</div>
 					</div>

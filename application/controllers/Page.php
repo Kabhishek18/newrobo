@@ -30,6 +30,29 @@ class Page extends CI_Controller {
 		$this->load->view('about');
 		$this->load->view('inc/footer');
     }
+    
+    
+      
+    public function Privacy()
+	{	
+		$this->load->view('inc/header');
+		$this->load->view('privacy');
+		$this->load->view('inc/footer');
+    }
+      
+    public function TC()
+	{	
+		$this->load->view('inc/header');
+		$this->load->view('tc');
+		$this->load->view('inc/footer');
+    }
+      
+    public function FAQ()
+	{	
+		$this->load->view('inc/header');
+		$this->load->view('faq');
+		$this->load->view('inc/footer');
+    }
 	
 	public function Blog()
 	{

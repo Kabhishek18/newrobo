@@ -8,6 +8,9 @@ $route['translate_uri_dashes'] = FALSE;
 
 //Page 
 $route['aboutus'] = 'page/About';
+$route['privacy_policy'] = 'page/Privacy';
+$route['tc'] = 'page/TC';
+$route['faq'] = 'page/FAQ';
 $route['contactus'] = 'page/Contact';
 $route['blog'] = 'page/Blog';
 $route['blog/(:num)'] = 'page/BlogDetail';
