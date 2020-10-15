@@ -87,11 +87,11 @@
                                  </div>
  
                                  <div class="form-group">
-                                     <input type="email" name ="email" class="form-control" id="inputPassword4" placeholder="mail *">
+                                     <input type="email" name ="email" class="form-control" id="inputPassword4" placeholder="Mail *">
                                  </div>
  
                                  <div class="form-group">
-                                     <input type="number" name="phone" class="form-control" id="inputEmail4" placeholder="number*">
+                                     <input type="number" name="phone" class="form-control" id="inputEmail4" placeholder="Number*">
                                  </div>     
                              </div>
  
@@ -109,7 +109,15 @@
                      </form>
                  </div>
  
-                 
+                 <style>
+				 input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+				 </style>
              </div>
          </section>
          <!---------------------------------------------------Contact-us_End----------------------------->

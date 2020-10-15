@@ -322,20 +322,20 @@
 		<!--------------------------------LIGHT_BOX_SECTION_START--------------------------------------------->
 		<section id="light_box">
 			<div class="gallery">
-				<a href="<?=base_url()?>assets/img/full/1.jpg" class="big">
-					<img src="<?=base_url()?>assets/img/full/1.jpg" alt="" title="Beautiful Image" />
+				<a href="<?=base_url()?>assets/img/slider/1.jpg" class="big">
+					<img src="<?=base_url()?>assets/img/slider/1.jpg" alt="" title="Beautiful Image" />
 					<span><span><span></span></span></span>
 				</a>
-				<a href="<?=base_url()?>assets/img/full/5.jpg">
-					<img src="<?=base_url()?>assets/img/full/5.jpg" alt="" title=""/>
+				<a href="<?=base_url()?>assets/img/slider/2.jpg">
+					<img src="<?=base_url()?>assets/img/slider/2.jpg" alt="" title=""/>
 					<span><span><span></span></span></span>
 				</a>
-				<a href="<?=base_url()?>assets/img/full/6.jpg">
-					<img src="<?=base_url()?>assets/img/full/6.jpg" alt="" title="Beautiful Image"/>
+				<a href="<?=base_url()?>assets/img/slider/3.jpg">
+					<img src="<?=base_url()?>assets/img/slider/3.jpg" alt="" title="Beautiful Image"/>
 					<span><span><span></span></span></span>
 				</a>
-				<a href="<?=base_url()?>assets/img/full/7.jpg">
-					<img src="<?=base_url()?>assets/img/full/7.jpg" alt="" title=""/>
+				<a href="<?=base_url()?>assets/img/slider/4.jpg">
+					<img src="<?=base_url()?>assets/img/slider/4.jpg" alt="" title=""/>
 					<span><span><span></span></span></span>
 				</a>
 				<div class="clear"></div>
@@ -567,10 +567,16 @@
 	/* background: #f4bd00ad; */
 	width: 200px !important;
 	height: 200px !important;
-	border: 1px solid #eaeaea;
+	border: none;
 	max-height: fit-content !important;
 	text-align: center;
 	border-radius: 3px;
+    box-shadow: none;
+	}
+	.client-inners-img:hover{
+	transition: none;
+    transform: none;
+	 box-shadow: none;
 	}
 	.client-inners-img img {
 
@@ -579,7 +585,25 @@
 	}
 	.client-inners-img {
 	background: #ffffff;}
-			</style>	 
+	
+		.gridbg1 {
+  background-image: url('../img/Infographic/coding-in-education.jpg');
+}
+
+.gridbg2 {
+  background-image: url('../img/Infographic/python_banner.jpg');
+      background-position: 17% center;
+}
+
+.gridbg3 {
+  background-image: url('../img/Infographic/1__zuw13gEDVIMonayyJgGGA.jpeg');
+}
+
+.gridbg4 {
+  background-image: url('../img/Infographic/OnlineCamps-SiliconSTEMAcademy-DenverCo.png');
+}
+	
+ 	</style>	 
  
  
  

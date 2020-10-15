@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
+/************************SACHIN_AWASTHI************************************/
+
+
 /*.current{
   background-color: #f4bd00 !important;
   padding: 20px;
@@ -21,6 +24,9 @@ body {
   margin: 0px;
 }
 
+#selectprice  .modal-body{
+	padding: 19px !important;
+}
 .hide_from_innerpages {
   display: none;
 }
@@ -286,13 +292,13 @@ header .li_item:hover .li_item_a .icon_size {
 .banner__slider .slide .slide__content--headings .animated {
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
-  font-family: lato;
+ 
   font-weight: bolder;
 }
 
 .banner__slider .slide .slide__content--headings .top-title {
   margin-bottom: 0px;
-  font-family: 'Handlee', cursive;
+ 
   white-space: nowrap;
   color: rgb(254, 101, 0);
   border-color: rgb(86, 80, 159);
@@ -796,7 +802,7 @@ a:hover {
   line-height: 1.2em;
   color: #ffffff;
   font-weight: 300;
-  font-family: 'Lato', sans-serif;
+ 
 }
 
 .enroll_btn_box a {
@@ -909,9 +915,19 @@ a:hover {
 }
 
 .purple_color {
-  background-color: #56509F;
+  background-color: #56509F; 
+
 }
 
+.instructors{
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.2em;
+	margin-top: 0px;
+	margin-bottom: 20px;
+ 
+	    text-align: center;
+}
 .welcome_layout_box h5 {
   font-size: 27px;
   font-weight: 500;
@@ -946,12 +962,13 @@ a:hover {
 }
 
 #overview_box h4 {
-  color: #56509F;
-  font-size: 33px !important;
-  margin-bottom: 30px;
-  font-weight: 400;
-  line-height: 1.2em;
-  font-family: 'Lato';
+	color: #56509F;
+    font-size: 27px !important;
+    margin-bottom: 30px;
+    font-weight: 400;
+    line-height: 1.5em;
+ 
+    text-align: justify;
 }
 
 .overview_column_left_img {
@@ -989,7 +1006,7 @@ a:hover {
   line-height: 1.2em;
   margin-top: 0px;
   margin-bottom: 20px;
-  font-family: 'Lato';
+ 
 }
 
 .overview_holder {
@@ -1041,7 +1058,7 @@ a:hover {
     line-height: 1.2em;
     margin-top: 0px;
     margin-bottom: 20px;
-    font-family: 'Lato';}
+ }
 
 .tab_box .nav-tabs .nav-item {
   margin-bottom: -1px;
@@ -1419,7 +1436,7 @@ footer .form-control::placeholder {
  ************************************TESTIMONIAL_START*********************************************/
 
 .testimonial-section {
-  background: url('../img/bg1.jpg') no-repeat;
+  background: url('../img/Infographic/Screen-Time-Header.jpg') no-repeat;
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1451,11 +1468,10 @@ footer .form-control::placeholder {
 }
 
 .testimonial P {
-  font-size: 38px;
-  line-height: 1.2em;
-  color: #ffffff;
-  font-family: lato;
-  font-weight: 300;
+	font-size: 25px;
+	line-height: 1.8em;
+	color: #ffffff;
+	font-weight: 300;
 }
 
 .testimonial span {
@@ -1765,7 +1781,7 @@ footer .form-control::placeholder {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.4em;
-  font-family: 'Lato';
+ 
 }
 
 .price_plan_box_inner {
@@ -1798,7 +1814,7 @@ line-height:35px;
   font-weight: 300;
   line-height: 1em;
   font-style: normal;
-  font-family: 'Lato';
+ 
 }
 
 .component-pricing-plan-header {
@@ -1806,7 +1822,6 @@ line-height:35px;
   font-weight: 400;
   line-height: 1.2em;
   color: #56509F;
-  font-family: 'Lato';
   margin-top: 0px;
 }
 
@@ -1935,7 +1950,7 @@ section {
 .text_center12 h3 {
   font-weight: 300;
   color: #56509F;
-  font-family: 'Lato';
+
   font-size: 38px;
   line-height: 1.2em;
 }
@@ -1943,7 +1958,7 @@ section {
 .text_center12 strong {
   color: #f3be00;
   font-weight: 900;
-  font-family: 'Lato';
+
 }
 
 .component-divider {
@@ -1961,7 +1976,7 @@ section {
   font-size: 20px;
   color: #56509F;
   margin-top: 30px !important;
-  font-family: 'Lato';
+ 
   font-style: italic;
 }
 
@@ -2057,7 +2072,7 @@ section {
   line-height: 1.2em;
   font-style: normal;
   color: #56509F;
-  font-family: 'Lato';
+ 
 }
 
 .feature_text p {
@@ -2147,7 +2162,7 @@ section {
   font-weight: 400;
   line-height: 1.4em;
   color: #56509F;
-  font-family: 'Lato';
+
 }
 
 .text_with_light_box h5 {
@@ -2297,12 +2312,12 @@ section {
   font-style: normal;
   margin-bottom: 30px;
   color: #56509F;
-  font-family: 'Lato';
+ 
 }
 
 .post_categories_heading h6>span {
   text-transform: uppercase;
-  font-family: 'Lato';
+ 
   font-weight: 400;
 }
 
@@ -2392,7 +2407,7 @@ section {
   font-weight: 400;
   line-height: 1.2em;
   color: #56509F;
-  font-family: 'Lato';
+ 
 }
 
 .post_list_container_header .post-date {
@@ -2642,7 +2657,7 @@ section {
 .enroll_text span {
   font-weight: 400;
   color: #f4bd00;
-  font-family: 'Lato';
+ 
 }
 
 #other_services .price_plan_box_inner_white {
@@ -2690,7 +2705,7 @@ section {
   font-weight: 300;
   line-height: 1em;
   font-style: normal;
-  font-family: 'Lato';
+ 
 }
 
 #other_services .component-pricing-plan-header {
@@ -2698,7 +2713,7 @@ section {
   font-weight: 400;
   line-height: 1.2em;
   color: #56509F;
-  font-family: 'Lato';
+ 
   margin-top: 46px;
 }
 
@@ -2752,7 +2767,7 @@ section {
   margin-top: 30px !important;
   margin-bottom: 30px;
   color: #56509F;
-  font-family: 'Lato';
+ 
 }
 
 .h4 {
@@ -2775,7 +2790,7 @@ section {
 
 .all_comment_box .h5 {
   color: #56509F;
-  font-family: 'Lato';
+ 
   font-size: 24px;
   font-weight: 400;
   line-height: 1.2em;
@@ -2809,7 +2824,7 @@ section {
   font-weight: 400;
   line-height: 1.4em;
   color: #56509F;
-  font-family: 'Lato';
+  
 }
 
 .comment-meta-date {
@@ -2854,7 +2869,7 @@ section {
   font-weight: 400;
   line-height: 1.2em;
   color: #56509F;
-  font-family: 'Lato';
+ 
   border-bottom: 1px solid #e4e4e4;
   padding-bottom: 20px;
   margin-bottom: 20px;
@@ -2865,7 +2880,7 @@ section {
   font-weight: 400;
   line-height: 1.2em;
   color: #56509F;
-  font-family: 'Lato';
+ 
 }
 
 .reply-form p {
@@ -2915,7 +2930,7 @@ section {
 
 .course_detail_wrapper h3 {
   margin-bottom: 0px;
-  /* font-family: 'Handlee', cursive; */
+ 
   white-space: nowrap;
   color: rgb(29 29 28);
   border-color: rgb(86, 80, 159);
@@ -2924,7 +2939,7 @@ section {
   letter-spacing: 0px;
   font-weight: revert;
   font-size: 17px;
-  font-family: lato;
+ 
   margin-bottom: 20px;
 }
 
@@ -3066,7 +3081,7 @@ section {
 .overview_box h3 {
   font-size: 1.75rem;
   color: #56509f;
-  font-family: lato;
+ 
   margin-bottom: 20px;
 }
 
@@ -3243,7 +3258,7 @@ section {
   color: #56509F;
   font-size: 16px;
   text-transform: capitalize;
-  font-family: 'Roboto', sans-serif;
+ 
   display: block !important;
 }
 .mainmenu .active a,
@@ -3460,7 +3475,7 @@ section {
     font-size: 20px;
     text-align: justify;
     margin-top: 30px !important;
-    font-family: 'Lato';
+    
     font-style: italic;
     color: #A0A0A0 !important;
     line-height: 36px;
@@ -3509,7 +3524,7 @@ section {
 
 
 .client-inners-img{  
-  box-shadow: 0px 0px 150px #f4bd00;
+  
   position: relative;
   -webkit-transition: all 200ms ease-in;
   -webkit-transform: scale(1); 
@@ -3521,6 +3536,7 @@ section {
   transform: scale(1);   
 
 }
+/*
 .client-inners-img:hover{
   box-shadow: 0px 0px 150px #f4bd00;
   z-index: 2;
@@ -3532,7 +3548,7 @@ section {
   -moz-transform: scale(1.3);
   transition: all 200ms ease-in;
   transform: scale(1.3);
-}
+}*/
 
 
 .fa-youtube-play{
@@ -3701,7 +3717,7 @@ section {
 .big_title{
 	color: #f3be00;
 	font-weight: 900;
-	font-family: 'Lato';
+ 
 	font-size: 34px;
 	text-align: center;
 	margin-bottom: 30px;

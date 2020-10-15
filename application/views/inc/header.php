@@ -123,7 +123,7 @@
 									<?php $lists = $this->cart_model->Getcat();
 											foreach($lists as $list){?>	
 			                            <li class="dropdown nav-item li_item ">
-			                                <a class="dropdown-item" href="<?=base_url()?>courses/<?=$list['id']?>/<?=$list['cat_name']?>"><b><?=$list['cat_name']?></b><br><small><?=$list['cat_slug']?></small></a>
+			                                <a class="dropdown-item" href="<?=base_url()?>courses/<?=$list['id']?>/<?=str_replace(' ','-',$list['cat_name'])?>"><b><?=$list['cat_name']?></b><br><small><?=$list['cat_slug']?></small></a>
 			                            </li>
 									<?php }?>			
 		                            </ul>
@@ -133,7 +133,7 @@
 
 		                        <li class="nav-item li_item "><a href="<?=base_url()?>blog" class="nav-link li_item_a"><span class="icon_position icon_size icon_blog"></span>Blog</a></li>
 
-		                        <li class="nav-item li_item "><a href="contactus" class="nav-link li_item_a"><span class="icon_position icon_size icon_contact"></span>Contact</a></li>
+		                        <li class="nav-item li_item "><a href="<?=base_url()?>contactus" class="nav-link li_item_a"><span class="icon_position icon_size icon_contact"></span>Contact</a></li>
 		                        <?php $ses =$this->session->student_account;
 		                        if (!empty($ses)) {
 		                        	 $users_name = $ses['users_name'];
@@ -141,7 +141,7 @@
 		                        
 		                        if(!empty($users_name)){?>
 		                        <li class="nav-item li_item"><a class="li_item_a" href="<?=base_url()?>dashboard"><?=$users_name?> (Dashboard)</a>
-	                     		<a class="li_item_a" style="color: red!important" href="<?=base_url()?>student/Logout">Logout</a></li>	
+	                     		<a class="li_item_a" style="color: red!important;    margin-top: -50px;" href="<?=base_url()?>student/Logout">Logout</a></li>	
 		                        <?php }
 		                        else{?>
 		                        <li class="nav-item li_item "><a class="nav-link li_item_a" href="#" data-toggle="modal" data-target="#exampleModalCenter"><span class="icon_position icon_size icon_login"></span>Login / Signup</a></li>

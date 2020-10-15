@@ -243,7 +243,7 @@ class Student extends CI_Controller {
 		 $update =$this->page_model->EmailVerify($users_token,$users_email_verify);
 		if ($update) {
 			$this->load->view('inc/header');
-			$this->session->set_flashdata('success', '<span style="color:green">Congratulation, Email Verified Successfully, <p>Please Click to Login <a href="'.base_url().'">Login</a></p></span>');
+			$this->session->set_flashdata('success', '<span style="color:green">Congratulation, Email Verified Successfully, <p>Please Click to <a href="'.base_url().'">Login</a></p></span>');
 			$this->load->view('status');
 			$this->load->view('inc/footer');
 			}
@@ -309,3 +309,4 @@ class Student extends CI_Controller {
 	}
 
 }
+

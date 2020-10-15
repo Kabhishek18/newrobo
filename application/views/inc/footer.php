@@ -17,22 +17,7 @@
 								</div>
 							</div>
 						</div>
-						<style>
-.footer_logo img {
-width: 90%;
-opacity: .8;
-}
-#selectprice  .modal-body{
-	padding: 19px !important;
-}
-.post_title h2 {
-    min-height: 85px;
-}
-.class_col_box {
-    
-    min-height: 200px;
-}
-						</style>
+
 						<div class="col-md-3">
 							<div class="col_inner">
 								<h6 class="f_head"><span class="footer_heading">Courses</span><span class="footer_line"></span></h6>
@@ -197,6 +182,52 @@ text-align: justify;
 body{
 	    font-family: 'Open Sans', sans-serif !important;
 }
+
+
+ 
+.footer_logo img {
+	width: 90%;
+	opacity: .8;
+}
+#selectprice  .modal-body{
+	padding: 19px !important;
+}
+.post_title h2 {
+	min-height: 85px;
+}
+.class_col_box {
+	min-height: 200px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0; 
+}
+ 
+
+
+
+ 
+ 
+.component-list{
+	min-height:180px;
+}
+.component-pricing-plan-header {
+ 
+    min-height: 71px;
+}
+.component-pricing-plan-description {
+ 
+    min-height: 50px;
+}
+
+
+
+
+
 </style>
 								
 							</div>

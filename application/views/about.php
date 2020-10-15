@@ -151,164 +151,85 @@ margin-left: auto !important;
 				<div class="counter_slider">
 			 		<div class="counter_inner">
 			 			<div class="counter_box">
-			 				logo
+			 				<img src="<?=base_url()?>assets/img/eng/IITR.jpg">
 			 			</div>
-			 			<h5>IIT</h5>
-			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
+			 			<h5>IIT<br>ROORKEE</h5>
+			 			 
 			 		</div>
 
 			 		<div class="counter_inner">
-			 			<div class="counter_box">
-			 				logo
+			 			<div class="counter_box extra_position">
+			 				<img src="<?=base_url()?>assets/img/eng/IIM-A.png">
 			 			</div>
-			 			<h5>NIT</h5>
-			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
+			 			<h5>IIM<br>AHMEDABAD</h5>
+			 			 
 			 		</div>
-
+ 
 
 			 		<div class="counter_inner">
 			 			<div class="counter_box">
-			 				logo
+			 					<img src="<?=base_url()?>assets/img/eng/3020.png">
 			 			</div>
-			 			<h5>IIM</h5>
-			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
+			 			<h5>LATROBE UNIVERSITY<br>AUSTRALIA
+						</h5>
+			 		 
 			 		</div>
-
-
-			 	<!--	<div class="counter_inner">
-			 			<div class="counter_box">
-			 				123
-			 			</div>
-			 			<h5>Full Daycare</h5>
-			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
-			 		</div>
-
-
-
-			 		<div class="counter_inner">
-			 			<div class="counter_box">
-			 				123
-			 			</div>
-			 			<h5>Full Daycare</h5>
-			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
-			 		</div>
-
-
-			 		<div class="counter_inner">
-			 			<div class="counter_box">
-			 				123
-			 			</div>
-			 			<h5>Full Daycare</h5>
-			 			<p>Elementum pulvinar detos diaspis movum blandit.</p>
-			 		</div> -->
 				</div>
 			</div>
 		</section>
 		<!---------------------------------------------------counter_wrapper_End------------------------------>
+<style>
+.counter_wrapper {
 
-		<!---------------------------------------------------blog_Start------------------------------>
-		<!--<section id="blog" class="p_t_50 p_b_50 bottom_box_shadow">-->
-		<!--	<div class="container">-->
-		<!--		<div class="title">-->
-		<!--			<h2>What's New</h2>-->
-		<!--			<h6>Keep up to date with the latest news</h6>-->
-		<!--			<div></div>-->
-		<!--		</div>-->
-		<!--		<div class="blog_container welcome_layout">-->
-		<!--			<div class="row">-->
-		<!--				<div class="col-md-4">-->
-		<!--					<div class="blog_box">-->
-		<!--						<div class="post_date">-->
-		<!--							October 03, 2014-->
-		<!--						</div>-->
-								
-		<!--						<div class="post_img">-->
-		<!--							<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>-->
-		<!--							<span class="post_no">12</span>-->
-		<!--						</div>-->
-								
-		<!--						<div class="post_title">-->
-		<!--							<h2>Drawing and Painting Lessons</h2>-->
-		<!--						</div>-->
-								
-		<!--						<div class="post_text">-->
-		<!--							Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum.-->
-		<!--						</div>-->
-								
-		<!--						<div class="filter_box">-->
-		<!--							<ul>-->
-		<!--								<li class="author"><a href="">Anna Brown</a></li>-->
-		<!--								<li class="category"><a href="">Events, Fun</a></li>-->
-		<!--							</ul>-->
-		<!--						</div>-->
-		<!--					</div>-->
-		<!--				</div>-->
-						
-						
-						
-		<!--				<div class="col-md-4">-->
-		<!--					<div class="blog_box">-->
-		<!--						<div class="post_date">-->
-		<!--							October 03, 2014-->
-		<!--						</div>-->
-								
-		<!--						<div class="post_img">-->
-		<!--							<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>-->
-		<!--							<span class="post_no">12</span>-->
-		<!--						</div>-->
-								
-		<!--						<div class="post_title">-->
-		<!--							<h2>Drawing and Painting Lessons</h2>-->
-		<!--						</div>-->
-								
-		<!--						<div class="post_text">-->
-		<!--							Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum.-->
-		<!--						</div>-->
-								
-		<!--						<div class="filter_box">-->
-		<!--							<ul>-->
-		<!--								<li class="author"><a href="">Anna Brown</a></li>-->
-		<!--								<li class="category"><a href="">Events, Fun</a></li>-->
-		<!--							</ul>-->
-		<!--						</div>-->
-		<!--					</div>-->
-		<!--				</div>-->
-						
-						
-		<!--				<div class="col-md-4">-->
-		<!--					<div class="blog_box">-->
-		<!--						<div class="post_date">-->
-		<!--							October 03, 2014-->
-		<!--						</div>-->
-								
-		<!--						<div class="post_img">-->
-		<!--							<a href=""><img src="<?=base_url()?>assets/img/7.jpg" alt=""></a>-->
-		<!--							<span class="post_no">12</span>-->
-		<!--						</div>-->
-								
-		<!--						<div class="post_title">-->
-		<!--							<h2>Drawing and Painting Lessons</h2>-->
-		<!--						</div>-->
-								
-		<!--						<div class="post_text">-->
-		<!--							Magna est consectetur interdum modest dictum. Curabitur est faucibus, malesuada esttincidunt etos et mauris, nunc a libero govum est cuprum.-->
-		<!--						</div>-->
-								
-		<!--						<div class="filter_box">-->
-		<!--							<ul>-->
-		<!--								<li class="author"><a href="">Anna Brown</a></li>-->
-		<!--								<li class="category"><a href="">Events, Fun</a></li>-->
-		<!--							</ul>-->
-		<!--						</div>-->
-		<!--					</div>-->
-		<!--				</div>-->
-		<!--			</div>-->
-					
-		<!--			<div class="more_blog">-->
-		<!--				<a href=""> go to blog</a>-->
-		<!--			</div>-->
-		<!--		</div>-->
-				
-		<!--	</div>-->
-		<!--</section>-->
-		<!---------------------------------------------------blog_End------------------------------>
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    table-layout: fixed;
+    z-index: 3;
+    position: relative;
+    padding: 80px 0px 80px 0px;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgb(68 68 68 / 30%);
+}
+
+
+ 
+.counter_box img{
+    width: 163px;
+    object-fit: contain;}
+.counter_box {
+    width: 180px;
+    height: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 180px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background: #ffffff;
+}
+
+.extra_position img{
+    margin-top: 0px;
+    position: relative;
+    top: -10px;}
+	
+.counter_inner h5 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: #ff2828 !important;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.2em;
+    font-weight: 600;
+    /* background: white; */
+}
+
+
+ 
+ 
+</style>

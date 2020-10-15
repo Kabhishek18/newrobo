@@ -14,29 +14,29 @@
      <p>2. <strong>Note!</strong> Please Follow up the instruction as given Below.</p>
     </div>
   </div>
+<div class="col-md-4"></div>  
 <div class="col-md-4">
 <figure class="card card-product">
   <div class="bottom-wrap">
-    <a href="javascript:void(0)" class="btn btn-sm btn-primary float-right buy_now" data-amount="1000" data-id="1">Proceed To Payment</a> 
+    <a href="javascript:void(0)" class="btn btn-sm btn-primary center-block" data-amount="1000" data-id="1">Proceed To Payment</a> 
   </div> <!-- bottom-wrap.// -->
 </figure>
 </div> <!-- col // -->
+<div class="col-md-4"></div>
+<div class="col-md-4"></div>    
+
 <div class="col-md-4">
 <figure class="card card-product">
 
   <div class="bottom-wrap">
-      <a href="<?=base_url()?>checkout" onclick="window.history.back();"class="btn btn-sm btn-success float-right ">Back To Checkout</a> 
+      <a href="<?=base_url()?>checkout" onclick="window.history.back();" style="margin-left: 18px;
+    font-weight: 800;">Back To Checkout</a> 
      
   </div> <!-- bottom-wrap.// -->
 </figure>
 </div> <!-- col // -->
-<div class="col-md-4">
-<figure class="card card-product">
-  <div class="bottom-wrap">
-      <a href="<?=base_url()?>" class=" btn btn-info float-right ">Home</a>
-  </div> <!-- bottom-wrap.// -->
-</figure>
-</div> <!-- col // -->
+
+<div class="col-md-4"></div>  
 </div> <!-- row.// -->
 </div> 
 <!--container.//-->

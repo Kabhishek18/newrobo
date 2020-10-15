@@ -1436,7 +1436,7 @@ footer .form-control::placeholder {
  ************************************TESTIMONIAL_START*********************************************/
 
 .testimonial-section {
-  background: url('../img/bg1.jpg') no-repeat;
+  background: url('../img/Infographic/Screen-Time-Header.jpg') no-repeat;
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1574,7 +1574,7 @@ footer .form-control::placeholder {
 ****************************************COUNTER_START*****************************************************/
 
 .counter_wrapper {
-  background: url('../img/bg2.jpg') no-repeat;
+  background: url('../img/Infographic/LearningResearch-NewsFeature.jpg') no-repeat;
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1795,6 +1795,14 @@ footer .form-control::placeholder {
   background-image: url(../img/price_bg1.jpg);
 }
 
+ 
+.price_1{
+  background-image: url(../img/blog_img/little_chap_animation_game.jpeg) !important;
+      background-position: 20% -47%;
+}
+.component-list{
+	min-height:180px;
+}
 .component-pricing-plan-price {
   width: 35%;
   font-family: 'Open Sans';
@@ -1823,6 +1831,7 @@ line-height:35px;
   line-height: 1.2em;
   color: #56509F;
   margin-top: 0px;
+  min-height: 55px;
 }
 
 .price_plan_box_inner_white {
@@ -1896,7 +1905,7 @@ line-height:35px;
 }
 
 #our_goal_section {
-  background: url(../img/bg1.jpg) no-repeat;
+  background: url(../img/Infographic/155284-636099746329920221_338x600_thumb.jpg) no-repeat;
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -3524,7 +3533,7 @@ section {
 
 
 .client-inners-img{  
-  box-shadow: 0px 0px 150px #f4bd00;
+  
   position: relative;
   -webkit-transition: all 200ms ease-in;
   -webkit-transform: scale(1); 
@@ -3536,6 +3545,7 @@ section {
   transform: scale(1);   
 
 }
+/*
 .client-inners-img:hover{
   box-shadow: 0px 0px 150px #f4bd00;
   z-index: 2;
@@ -3547,7 +3557,7 @@ section {
   -moz-transform: scale(1.3);
   transition: all 200ms ease-in;
   transform: scale(1.3);
-}
+}*/
 
 
 .fa-youtube-play{
